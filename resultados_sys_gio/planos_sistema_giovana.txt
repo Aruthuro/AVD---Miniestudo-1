@@ -1,0 +1,2069 @@
+====================================================================================================
+PLANOS DE EXECUÇÃO DAS CONSULTAS
+====================================================================================================
+
+====================================================================================================
+QUERY ID : 1
+TÍTULO   : Busca básica de produto por ASIN
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, pi.p_group, pi.salesrank, pi.downloads FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=0.85..16.89 rows=1 width=69) (actual time=0.058..0.059 rows=1 loops=1)
+  Buffers: shared hit=5 read=3
+  ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.038..0.039 rows=1 loops=1)
+        Index Cond: (asin = '0738700797'::bpchar)
+        Buffers: shared hit=2 read=2
+  ->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=62) (actual time=0.017..0.017 rows=1 loops=1)
+        Index Cond: (pid = p.pid)
+        Buffers: shared hit=3 read=1
+Planning:
+  Buffers: shared hit=272 read=12 dirtied=1
+Planning Time: 1.131 ms
+Execution Time: 0.094 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.038..0.039 rows=1 loops=1)
+->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=62) (actual time=0.017..0.017 rows=1 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=5 read=3
+Buffers: shared hit=2 read=2
+Buffers: shared hit=3 read=1
+Buffers: shared hit=272 read=12 dirtied=1
+
+
+====================================================================================================
+QUERY ID : 2
+TÍTULO   : Busca do identificador interno do produto
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT Pid, ASIN FROM PRODUCT WHERE ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Index Scan using product_asin_key on product  (cost=0.42..8.44 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=1)
+  Index Cond: (asin = '0738700797'::bpchar)
+  Buffers: shared hit=4
+Planning Time: 0.029 ms
+Execution Time: 0.015 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Index Scan using product_asin_key on product  (cost=0.42..8.44 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=4
+
+
+====================================================================================================
+QUERY ID : 3
+TÍTULO   : Busca de reviews de um produto
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT r.rev_id, r.cutomer, r.rating, r.votes, r.helpful, r.date FROM REVIEW r JOIN PRODUCT p ON r.Pid = p.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1008.46..104232.16 rows=14 width=32) (actual time=131.560..510.201 rows=12 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=7468 read=55882 dirtied=6286 written=1030
+  ->  Hash Join  (cost=8.46..103230.76 rows=6 width=32) (actual time=304.530..403.884 rows=4 loops=3)
+        Hash Cond: (r.pid = p.pid)
+        Buffers: shared hit=7468 read=55882 dirtied=6286 written=1030
+        ->  Parallel Seq Scan on review r  (cost=0.00..94917.00 rows=3163900 width=36) (actual time=0.021..145.555 rows=2531081 loops=3)
+              Buffers: shared hit=7396 read=55882 dirtied=6286 written=1030
+        ->  Hash  (cost=8.44..8.44 rows=1 width=4) (actual time=105.735..105.735 rows=1 loops=3)
+              Buckets: 1024  Batches: 1  Memory Usage: 9kB
+              Buffers: shared hit=14
+              ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=105.708..105.714 rows=1 loops=3)
+                    Index Cond: (asin = '0738700797'::bpchar)
+                    Buffers: shared hit=14
+Planning:
+  Buffers: shared hit=57 read=1
+Planning Time: 0.246 ms
+JIT:
+  Functions: 36
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 2.875 ms, Inlining 0.000 ms, Optimization 17.028 ms, Emission 300.017 ms, Total 319.920 ms
+Execution Time: 1038.625 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=105.708..105.714 rows=1 loops=3)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=7468 read=55882 dirtied=6286 written=1030
+Buffers: shared hit=7468 read=55882 dirtied=6286 written=1030
+Buffers: shared hit=7396 read=55882 dirtied=6286 written=1030
+Buffers: shared hit=14
+Buffers: shared hit=14
+Buffers: shared hit=57 read=1
+
+
+====================================================================================================
+QUERY ID : 4
+TÍTULO   : Busca de produtos similares
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT sp.ASIN_SIM FROM SIMILAR_PRODUCT sp JOIN PRODUCT p ON sp.Pid = p.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=0.85..17.01 rows=3 width=11) (actual time=0.016..0.018 rows=5 loops=1)
+  Buffers: shared hit=8
+  ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.011..0.011 rows=1 loops=1)
+        Index Cond: (asin = '0738700797'::bpchar)
+        Buffers: shared hit=4
+  ->  Index Only Scan using similar_product_pkey on similar_product sp  (cost=0.43..8.52 rows=5 width=15) (actual time=0.003..0.004 rows=5 loops=1)
+        Index Cond: (pid = p.pid)
+        Heap Fetches: 0
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=42 read=3
+Planning Time: 0.308 ms
+Execution Time: 0.030 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.011..0.011 rows=1 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=42 read=3
+
+
+====================================================================================================
+QUERY ID : 5
+TÍTULO   : Busca de categorias de um produto
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT c.cat_id, c.cat_nome FROM PRODUCT p JOIN PRODUCT_CAT pc ON p.Pid = pc.Pid JOIN CATEGORY c ON pc.id_final_cat = c.cat_id WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=1.15..20.38 rows=5 width=18) (actual time=0.025..0.028 rows=2 loops=1)
+  Buffers: shared hit=14
+  ->  Nested Loop  (cost=0.85..18.84 rows=5 width=4) (actual time=0.009..0.010 rows=2 loops=1)
+        Buffers: shared hit=8
+        ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.005..0.006 rows=1 loops=1)
+              Index Cond: (asin = '0738700797'::bpchar)
+              Buffers: shared hit=4
+        ->  Index Only Scan using product_cat_pkey on product_cat pc  (cost=0.43..10.32 rows=8 width=8) (actual time=0.002..0.003 rows=2 loops=1)
+              Index Cond: (pid = p.pid)
+              Heap Fetches: 0
+              Buffers: shared hit=4
+  ->  Index Scan using category_pkey on category c  (cost=0.29..0.31 rows=1 width=18) (actual time=0.008..0.008 rows=1 loops=2)
+        Index Cond: (cat_id = pc.id_final_cat)
+        Buffers: shared hit=6
+Planning:
+  Buffers: shared hit=96 read=4
+Planning Time: 0.404 ms
+Execution Time: 0.039 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.005..0.006 rows=1 loops=1)
+->  Index Scan using category_pkey on category c  (cost=0.29..0.31 rows=1 width=18) (actual time=0.008..0.008 rows=1 loops=2)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=14
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=6
+Buffers: shared hit=96 read=4
+
+
+====================================================================================================
+QUERY ID : 6
+TÍTULO   : Busca de reviews positivos de um produto
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT r.rev_id, r.cutomer, r.rating, r.helpful FROM REVIEW r JOIN PRODUCT p ON r.Pid = p.Pid WHERE p.ASIN = '0738700797' AND r.rating >= 4;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1008.46..110354.31 rows=11 width=24) (actual time=5.404..314.789 rows=11 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=7564 read=55786
+  ->  Hash Join  (cost=8.46..109353.21 rows=5 width=24) (actual time=194.890..295.711 rows=4 loops=3)
+        Hash Cond: (r.pid = p.pid)
+        Buffers: shared hit=7564 read=55786
+        ->  Parallel Seq Scan on review r  (cost=0.00..102826.75 rows=2483029 width=28) (actual time=5.173..191.045 rows=1988750 loops=3)
+              Filter: (rating >= 4)
+              Rows Removed by Filter: 542332
+              Buffers: shared hit=7492 read=55786
+        ->  Hash  (cost=8.44..8.44 rows=1 width=4) (actual time=0.036..0.036 rows=1 loops=3)
+              Buckets: 1024  Batches: 1  Memory Usage: 9kB
+              Buffers: shared hit=14
+              ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.031..0.032 rows=1 loops=3)
+                    Index Cond: (asin = '0738700797'::bpchar)
+                    Buffers: shared hit=14
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.108 ms
+JIT:
+  Functions: 42
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.385 ms, Inlining 0.000 ms, Optimization 1.011 ms, Emission 14.454 ms, Total 16.851 ms
+Execution Time: 315.279 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.031..0.032 rows=1 loops=3)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=7564 read=55786
+Buffers: shared hit=7564 read=55786
+Buffers: shared hit=7492 read=55786
+Buffers: shared hit=14
+Buffers: shared hit=14
+Buffers: shared hit=4
+
+
+====================================================================================================
+QUERY ID : 7
+TÍTULO   : Busca de reviews úteis de um produto
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT r.rev_id, r.cutomer, r.helpful, r.votes FROM REVIEW r JOIN PRODUCT p ON r.Pid = p.Pid WHERE p.ASIN = '0738700797' AND r.helpful > 10;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1008.46..104530.45 rows=1 width=26) (actual time=5.402..181.647 rows=1 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=7660 read=55690
+  ->  Hash Join  (cost=8.46..103530.35 rows=1 width=26) (actual time=104.898..161.155 rows=0 loops=3)
+        Hash Cond: (r.pid = p.pid)
+        Buffers: shared hit=7660 read=55690
+        ->  Parallel Seq Scan on review r  (cost=0.00..102826.75 rows=264816 width=30) (actual time=5.683..149.164 rows=211681 loops=3)
+              Filter: (helpful > 10)
+              Rows Removed by Filter: 2319400
+              Buffers: shared hit=7588 read=55690
+        ->  Hash  (cost=8.44..8.44 rows=1 width=4) (actual time=0.040..0.041 rows=1 loops=3)
+              Buckets: 1024  Batches: 1  Memory Usage: 9kB
+              Buffers: shared hit=14
+              ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.034..0.035 rows=1 loops=3)
+                    Index Cond: (asin = '0738700797'::bpchar)
+                    Buffers: shared hit=14
+Planning:
+  Buffers: shared hit=7
+Planning Time: 0.201 ms
+JIT:
+  Functions: 42
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.461 ms, Inlining 0.000 ms, Optimization 0.938 ms, Emission 16.062 ms, Total 18.461 ms
+Execution Time: 182.166 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.034..0.035 rows=1 loops=3)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=7660 read=55690
+Buffers: shared hit=7660 read=55690
+Buffers: shared hit=7588 read=55690
+Buffers: shared hit=14
+Buffers: shared hit=14
+Buffers: shared hit=7
+
+
+====================================================================================================
+QUERY ID : 8
+TÍTULO   : Busca de informações resumidas do produto
+CATEGORIA: Lookup Simples
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT pi.title, pi.salesrank FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=0.85..16.89 rows=1 width=49) (actual time=0.019..0.020 rows=1 loops=1)
+  Buffers: shared hit=8
+  ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.013..0.014 rows=1 loops=1)
+        Index Cond: (asin = '0738700797'::bpchar)
+        Buffers: shared hit=4
+  ->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=53) (actual time=0.003..0.004 rows=1 loops=1)
+        Index Cond: (pid = p.pid)
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.188 ms
+Execution Time: 0.034 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.013..0.014 rows=1 loops=1)
+->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=53) (actual time=0.003..0.004 rows=1 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=18
+
+
+====================================================================================================
+QUERY ID : 9
+TÍTULO   : Produtos com sales rank alto
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, pi.salesrank FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE pi.salesrank <= 5000;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=11508.82..19745.43 rows=11968 width=60) (actual time=27.555..76.439 rows=11111 loops=1)
+  Workers Planned: 1
+  Workers Launched: 1
+  Buffers: shared hit=527 read=10155 written=1095
+  ->  Parallel Hash Join  (cost=10508.82..17548.63 rows=7040 width=60) (actual time=19.328..60.824 rows=5556 loops=2)
+        Hash Cond: (p.pid = pi.pid)
+        Buffers: shared hit=527 read=10155 written=1095
+        ->  Parallel Seq Scan on product p  (cost=0.00..6192.78 rows=322678 width=15) (actual time=0.012..18.783 rows=274276 loops=2)
+              Buffers: shared hit=126 read=2840 written=1095
+        ->  Parallel Hash  (cost=10446.48..10446.48 rows=4987 width=53) (actual time=19.000..19.001 rows=5556 loops=2)
+              Buckets: 16384  Batches: 1  Memory Usage: 992kB
+              Buffers: shared hit=305 read=7315
+              ->  Parallel Seq Scan on product_info pi  (cost=0.00..10446.48 rows=4987 width=53) (actual time=0.020..17.259 rows=5556 loops=2)
+                    Filter: (salesrank <= 5000)
+                    Rows Removed by Filter: 265786
+                    Buffers: shared hit=305 read=7315
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.125 ms
+Execution Time: 76.813 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=527 read=10155 written=1095
+Buffers: shared hit=527 read=10155 written=1095
+Buffers: shared hit=126 read=2840 written=1095
+Buffers: shared hit=305 read=7315
+Buffers: shared hit=305 read=7315
+Buffers: shared hit=18
+
+
+====================================================================================================
+QUERY ID : 10
+TÍTULO   : Produtos com muitos downloads
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, pi.downloads FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE pi.downloads > 1000;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1000.42..13042.43 rows=489 width=60) (actual time=0.333..28.953 rows=449 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=1516 read=7902 written=450
+  ->  Nested Loop  (cost=0.42..11993.53 rows=204 width=60) (actual time=0.205..13.983 rows=150 loops=3)
+        Buffers: shared hit=1516 read=7902 written=450
+        ->  Parallel Seq Scan on product_info pi  (cost=0.00..10446.48 rows=204 width=53) (actual time=0.180..12.567 rows=150 loops=3)
+              Filter: (downloads > 1000)
+              Rows Removed by Filter: 180745
+              Buffers: shared hit=68 read=7552 written=96
+        ->  Index Scan using product_pkey on product p  (cost=0.42..7.58 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=449)
+              Index Cond: (pid = pi.pid)
+              Buffers: shared hit=1448 read=350 written=354
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.190 ms
+Execution Time: 28.998 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_pkey on product p  (cost=0.42..7.58 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=449)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=1516 read=7902 written=450
+Buffers: shared hit=1516 read=7902 written=450
+Buffers: shared hit=68 read=7552 written=96
+Buffers: shared hit=1448 read=350 written=354
+Buffers: shared hit=18
+
+
+====================================================================================================
+QUERY ID : 11
+TÍTULO   : Reviews com alta utilidade
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT rev_id, Pid, helpful, votes FROM REVIEW WHERE helpful >= 50;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1000.00..107355.05 rows=35283 width=16) (actual time=3.094..156.535 rows=38457 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=7684 read=55594 written=96
+  ->  Parallel Seq Scan on review  (cost=0.00..102826.75 rows=14701 width=16) (actual time=3.060..137.010 rows=12819 loops=3)
+        Filter: (helpful >= 50)
+        Rows Removed by Filter: 2518262
+        Buffers: shared hit=7684 read=55594 written=96
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.053 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.779 ms, Inlining 0.000 ms, Optimization 0.840 ms, Emission 8.056 ms, Total 9.675 ms
+Execution Time: 158.076 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=7684 read=55594 written=96
+Buffers: shared hit=7684 read=55594 written=96
+Buffers: shared hit=3
+
+
+====================================================================================================
+QUERY ID : 12
+TÍTULO   : Reviews negativos com muitos votos
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT rev_id, Pid, rating, votes FROM REVIEW WHERE rating <= 2 AND votes >= 20;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1000.00..117925.40 rows=61889 width=14) (actual time=2.390..163.553 rows=160361 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=7780 read=55498
+  ->  Parallel Seq Scan on review  (cost=0.00..110736.50 rows=25787 width=14) (actual time=2.808..141.287 rows=53454 loops=3)
+        Filter: ((rating <= 2) AND (votes >= 20))
+        Rows Removed by Filter: 2477628
+        Buffers: shared hit=7780 read=55498
+Planning Time: 0.058 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.847 ms, Inlining 0.000 ms, Optimization 0.592 ms, Emission 7.741 ms, Total 9.179 ms
+Execution Time: 168.762 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=7780 read=55498
+Buffers: shared hit=7780 read=55498
+
+
+====================================================================================================
+QUERY ID : 13
+TÍTULO   : Produtos do grupo Book
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, pi.p_group FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE pi.p_group = 'Book';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Hash Join  (cost=23187.74..42290.22 rows=394495 width=61) (actual time=125.338..343.151 rows=393561 loops=1)
+  Hash Cond: (p.pid = pi.pid)
+  Buffers: shared hit=3130 read=7456, temp read=5604 written=5604
+  ->  Seq Scan on product p  (cost=0.00..8451.52 rows=548552 width=15) (actual time=0.005..34.661 rows=548552 loops=1)
+        Buffers: shared hit=2966
+  ->  Hash  (cost=14403.55..14403.55 rows=394495 width=54) (actual time=124.727..124.728 rows=393561 loops=1)
+        Buckets: 131072  Batches: 8  Memory Usage: 5594kB
+        Buffers: shared hit=164 read=7456, temp written=3485
+        ->  Seq Scan on product_info pi  (cost=0.00..14403.55 rows=394495 width=54) (actual time=0.004..57.697 rows=393561 loops=1)
+              Filter: ((p_group)::text = 'Book'::text)
+              Rows Removed by Filter: 149123
+              Buffers: shared hit=164 read=7456
+Planning:
+  Buffers: shared hit=26
+Planning Time: 0.158 ms
+Execution Time: 354.759 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=3130 read=7456, temp read=5604 written=5604
+Buffers: shared hit=2966
+Buffers: shared hit=164 read=7456, temp written=3485
+Buffers: shared hit=164 read=7456
+Buffers: shared hit=26
+
+
+====================================================================================================
+QUERY ID : 14
+TÍTULO   : Categorias raiz
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT cat_id, cat_nome FROM CATEGORY WHERE pcat_id IS NULL;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Seq Scan on category  (cost=0.00..824.56 rows=12 width=18) (actual time=0.005..2.091 rows=15 loops=1)
+  Filter: (pcat_id IS NULL)
+  Rows Removed by Filter: 49717
+  Buffers: shared hit=250 read=76 dirtied=1
+Planning:
+  Buffers: shared hit=5
+Planning Time: 0.048 ms
+Execution Time: 2.097 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=250 read=76 dirtied=1
+Buffers: shared hit=5
+
+
+====================================================================================================
+QUERY ID : 15
+TÍTULO   : Reviews recentes
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT rev_id, Pid, date FROM REVIEW WHERE date >= '2005-01-01';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1000.00..136143.45 rows=323167 width=12) (actual time=2.696..142.510 rows=323916 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=7876 read=55402
+  ->  Parallel Seq Scan on review  (cost=0.00..102826.75 rows=134653 width=12) (actual time=2.626..117.212 rows=107972 loops=3)
+        Filter: (date >= '2005-01-01'::date)
+        Rows Removed by Filter: 2423109
+        Buffers: shared hit=7876 read=55402
+Planning:
+  Buffers: shared hit=7 read=1
+Planning Time: 0.047 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.604 ms, Inlining 0.000 ms, Optimization 0.545 ms, Emission 7.270 ms, Total 8.419 ms
+Execution Time: 152.509 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=7876 read=55402
+Buffers: shared hit=7876 read=55402
+Buffers: shared hit=7 read=1
+
+
+====================================================================================================
+QUERY ID : 16
+TÍTULO   : Produtos sem downloads
+CATEGORIA: Filtros
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, pi.downloads FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE pi.downloads = 0;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=12178.17..33266.28 rows=140483 width=60) (actual time=53.550..125.061 rows=139960 loops=1)
+  Workers Planned: 1
+  Workers Launched: 1
+  Buffers: shared hit=3258 read=7424
+  ->  Parallel Hash Join  (cost=11178.17..18217.98 rows=82637 width=60) (actual time=45.502..103.315 rows=69980 loops=2)
+        Hash Cond: (p.pid = pi.pid)
+        Buffers: shared hit=3258 read=7424
+        ->  Parallel Seq Scan on product p  (cost=0.00..6192.78 rows=322678 width=15) (actual time=0.004..13.043 rows=274276 loops=2)
+              Buffers: shared hit=2966
+        ->  Parallel Hash  (cost=10446.48..10446.48 rows=58535 width=53) (actual time=44.523..44.523 rows=69980 loops=2)
+              Buckets: 262144  Batches: 1  Memory Usage: 15136kB
+              Buffers: shared hit=196 read=7424
+              ->  Parallel Seq Scan on product_info pi  (cost=0.00..10446.48 rows=58535 width=53) (actual time=0.014..23.007 rows=69980 loops=2)
+                    Filter: (downloads = 0)
+                    Rows Removed by Filter: 201362
+                    Buffers: shared hit=196 read=7424
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.170 ms
+Execution Time: 129.254 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=3258 read=7424
+Buffers: shared hit=3258 read=7424
+Buffers: shared hit=2966
+Buffers: shared hit=196 read=7424
+Buffers: shared hit=196 read=7424
+Buffers: shared hit=18
+
+
+====================================================================================================
+QUERY ID : 17
+TÍTULO   : Produto e identificador interno
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.Pid, p.ASIN, pi.title FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=0.85..16.89 rows=1 width=60) (actual time=0.017..0.019 rows=1 loops=1)
+  Buffers: shared hit=8
+  ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.011..0.012 rows=1 loops=1)
+        Index Cond: (asin = '0738700797'::bpchar)
+        Buffers: shared hit=4
+  ->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=49) (actual time=0.003..0.003 rows=1 loops=1)
+        Index Cond: (pid = p.pid)
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.180 ms
+Execution Time: 0.031 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.011..0.012 rows=1 loops=1)
+->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=49) (actual time=0.003..0.003 rows=1 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=18
+
+
+====================================================================================================
+QUERY ID : 18
+TÍTULO   : Produto e reviews associados
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, r.rating, r.helpful FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid JOIN REVIEW r ON p.Pid = r.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=1.28..56972.48 rows=14 width=62) (actual time=0.032..147.967 rows=12 loops=1)
+  Join Filter: (p.pid = r.pid)
+  Buffers: shared hit=356 read=23784 written=10450
+  ->  Nested Loop  (cost=0.85..16.89 rows=1 width=64) (actual time=0.009..0.013 rows=1 loops=1)
+        Buffers: shared hit=8
+        ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.006..0.009 rows=1 loops=1)
+              Index Cond: (asin = '0738700797'::bpchar)
+              Buffers: shared hit=4
+        ->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=49) (actual time=0.002..0.002 rows=1 loops=1)
+              Index Cond: (pid = p.pid)
+              Buffers: shared hit=4
+  ->  Index Scan using review_pkey on review r  (cost=0.43..56953.20 rows=192 width=10) (actual time=0.022..147.939 rows=12 loops=1)
+        Index Cond: (pid = pi.pid)
+        Buffers: shared hit=348 read=23784 written=10450
+Planning:
+  Buffers: shared hit=44
+Planning Time: 0.264 ms
+Execution Time: 147.986 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.006..0.009 rows=1 loops=1)
+->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=49) (actual time=0.002..0.002 rows=1 loops=1)
+->  Index Scan using review_pkey on review r  (cost=0.43..56953.20 rows=192 width=10) (actual time=0.022..147.939 rows=12 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=356 read=23784 written=10450
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=348 read=23784 written=10450
+Buffers: shared hit=44
+
+
+====================================================================================================
+QUERY ID : 19
+TÍTULO   : Produto e categorias associadas
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, c.cat_nome FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid JOIN PRODUCT_CAT pc ON p.Pid = pc.Pid JOIN CATEGORY c ON pc.id_final_cat = c.cat_id WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=1.57..19.16 rows=5 width=70) (actual time=0.025..0.028 rows=2 loops=1)
+  Buffers: shared hit=16 read=2
+  ->  Nested Loop  (cost=1.28..17.62 rows=5 width=60) (actual time=0.017..0.019 rows=2 loops=1)
+        Join Filter: (p.pid = pc.pid)
+        Buffers: shared hit=12
+        ->  Nested Loop  (cost=0.85..16.89 rows=1 width=64) (actual time=0.014..0.015 rows=1 loops=1)
+              Buffers: shared hit=8
+              ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.009..0.010 rows=1 loops=1)
+                    Index Cond: (asin = '0738700797'::bpchar)
+                    Buffers: shared hit=4
+              ->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=49) (actual time=0.002..0.002 rows=1 loops=1)
+                    Index Cond: (pid = p.pid)
+                    Buffers: shared hit=4
+        ->  Index Only Scan using product_cat_pkey on product_cat pc  (cost=0.43..0.63 rows=8 width=8) (actual time=0.002..0.003 rows=2 loops=1)
+              Index Cond: (pid = pi.pid)
+              Heap Fetches: 0
+              Buffers: shared hit=4
+  ->  Index Scan using category_pkey on category c  (cost=0.29..0.31 rows=1 width=18) (actual time=0.004..0.004 rows=1 loops=2)
+        Index Cond: (cat_id = pc.id_final_cat)
+        Buffers: shared hit=4 read=2
+Planning:
+  Buffers: shared hit=103 read=12
+Planning Time: 0.725 ms
+Execution Time: 0.045 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.009..0.010 rows=1 loops=1)
+->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..8.44 rows=1 width=49) (actual time=0.002..0.002 rows=1 loops=1)
+->  Index Scan using category_pkey on category c  (cost=0.29..0.31 rows=1 width=18) (actual time=0.004..0.004 rows=1 loops=2)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=16 read=2
+Buffers: shared hit=12
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=4 read=2
+Buffers: shared hit=103 read=12
+
+
+====================================================================================================
+QUERY ID : 20
+TÍTULO   : Produtos similares detalhados
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN AS produto_original, sp.ASIN_SIM FROM PRODUCT p JOIN SIMILAR_PRODUCT sp ON p.Pid = sp.Pid JOIN PRODUCT p2 ON sp.ASIN_SIM = p2.ASIN WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Nested Loop  (cost=1.28..18.36 rows=3 width=22) (actual time=0.011..0.031 rows=5 loops=1)
+  Buffers: shared hit=22 read=2
+  ->  Nested Loop  (cost=0.85..17.01 rows=3 width=22) (actual time=0.007..0.009 rows=5 loops=1)
+        Buffers: shared hit=8
+        ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.005..0.005 rows=1 loops=1)
+              Index Cond: (asin = '0738700797'::bpchar)
+              Buffers: shared hit=4
+        ->  Index Only Scan using similar_product_pkey on similar_product sp  (cost=0.43..8.52 rows=5 width=15) (actual time=0.002..0.002 rows=5 loops=1)
+              Index Cond: (pid = p.pid)
+              Heap Fetches: 0
+              Buffers: shared hit=4
+  ->  Index Only Scan using product_asin_key on product p2  (cost=0.42..0.45 rows=1 width=11) (actual time=0.004..0.004 rows=1 loops=5)
+        Index Cond: (asin = sp.asin_sim)
+        Heap Fetches: 0
+        Buffers: shared hit=14 read=2
+Planning:
+  Buffers: shared hit=92 read=16
+Planning Time: 0.409 ms
+Execution Time: 0.041 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=0.005..0.005 rows=1 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=22 read=2
+Buffers: shared hit=8
+Buffers: shared hit=4
+Buffers: shared hit=4
+Buffers: shared hit=14 read=2
+Buffers: shared hit=92 read=16
+
+
+====================================================================================================
+QUERY ID : 21
+TÍTULO   : Reviews e dados do produto
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT r.rev_id, r.rating, pi.title, pi.p_group FROM REVIEW r JOIN PRODUCT p ON r.Pid = p.Pid JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Hash Join  (cost=42581.81..377409.86 rows=7512132 width=56) (actual time=256.986..4315.575 rows=7593244 loops=1)
+  Hash Cond: (r.pid = pi.pid)
+  Buffers: shared hit=139 read=73725 written=59, temp read=55710 written=55710
+  ->  Hash Join  (cost=17451.42..252892.75 rows=7593360 width=14) (actual time=101.810..2342.322 rows=7593244 loops=1)
+        Hash Cond: (r.pid = p.pid)
+        Buffers: shared hit=137 read=66107 written=59, temp read=22907 written=22907
+        ->  Seq Scan on review r  (cost=0.00..139211.60 rows=7593360 width=10) (actual time=0.028..591.943 rows=7593244 loops=1)
+              Buffers: shared hit=1 read=63277
+        ->  Hash  (cost=8451.52..8451.52 rows=548552 width=4) (actual time=100.951..100.951 rows=548552 loops=1)
+              Buckets: 262144  Batches: 4  Memory Usage: 6874kB
+              Buffers: shared hit=136 read=2830 written=59, temp written=1204
+              ->  Seq Scan on product p  (cost=0.00..8451.52 rows=548552 width=4) (actual time=0.011..35.788 rows=548552 loops=1)
+                    Buffers: shared hit=136 read=2830 written=59
+  ->  Hash  (cost=13046.84..13046.84 rows=542684 width=54) (actual time=154.985..154.986 rows=542684 loops=1)
+        Buckets: 131072  Batches: 8  Memory Usage: 6870kB
+        Buffers: shared hit=2 read=7618, temp written=4406
+        ->  Seq Scan on product_info pi  (cost=0.00..13046.84 rows=542684 width=54) (actual time=4.366..52.816 rows=542684 loops=1)
+              Buffers: shared hit=2 read=7618
+Planning:
+  Buffers: shared hit=30
+Planning Time: 0.181 ms
+JIT:
+  Functions: 18
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.362 ms, Inlining 0.000 ms, Optimization 0.223 ms, Emission 4.193 ms, Total 4.778 ms
+Execution Time: 4533.900 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=139 read=73725 written=59, temp read=55710 written=55710
+Buffers: shared hit=137 read=66107 written=59, temp read=22907 written=22907
+Buffers: shared hit=1 read=63277
+Buffers: shared hit=136 read=2830 written=59, temp written=1204
+Buffers: shared hit=136 read=2830 written=59
+Buffers: shared hit=2 read=7618, temp written=4406
+Buffers: shared hit=2 read=7618
+Buffers: shared hit=30
+
+
+====================================================================================================
+QUERY ID : 22
+TÍTULO   : Produto com categorias e reviews
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, c.cat_nome, r.rating FROM PRODUCT p JOIN PRODUCT_CAT pc ON p.Pid = pc.Pid JOIN CATEGORY c ON pc.id_final_cat = c.cat_id JOIN REVIEW r ON p.Pid = r.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1009.17..104250.65 rows=69 width=27) (actual time=5.709..308.551 rows=24 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=210 read=63249
+  ->  Nested Loop  (cost=9.17..103243.75 rows=29 width=27) (actual time=191.758..291.176 rows=8 loops=3)
+        Buffers: shared hit=210 read=63249
+        ->  Nested Loop  (cost=8.88..103234.81 rows=29 width=17) (actual time=191.754..291.165 rows=8 loops=3)
+              Join Filter: (p.pid = pc.pid)
+              Buffers: shared hit=138 read=63249
+              ->  Hash Join  (cost=8.46..103230.76 rows=6 width=21) (actual time=191.747..291.153 rows=4 loops=3)
+                    Hash Cond: (r.pid = p.pid)
+                    Buffers: shared hit=101 read=63249
+                    ->  Parallel Seq Scan on review r  (cost=0.00..94917.00 rows=3163900 width=6) (actual time=0.012..138.659 rows=2531081 loops=3)
+                          Buffers: shared hit=33 read=63245
+                    ->  Hash  (cost=8.44..8.44 rows=1 width=15) (actual time=6.154..6.154 rows=1 loops=3)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=13 read=1
+                          ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=6.139..6.142 rows=1 loops=3)
+                                Index Cond: (asin = '0738700797'::bpchar)
+                                Buffers: shared hit=13 read=1
+              ->  Index Only Scan using product_cat_pkey on product_cat pc  (cost=0.43..0.57 rows=8 width=8) (actual time=0.002..0.002 rows=2 loops=12)
+                    Index Cond: (pid = r.pid)
+                    Heap Fetches: 0
+                    Buffers: shared hit=37
+        ->  Index Scan using category_pkey on category c  (cost=0.29..0.31 rows=1 width=18) (actual time=0.001..0.001 rows=1 loops=24)
+              Index Cond: (cat_id = pc.id_final_cat)
+              Buffers: shared hit=72
+Planning:
+  Buffers: shared hit=51
+Planning Time: 0.498 ms
+JIT:
+  Functions: 66
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.832 ms, Inlining 0.000 ms, Optimization 0.929 ms, Emission 17.406 ms, Total 20.167 ms
+Execution Time: 309.147 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=15) (actual time=6.139..6.142 rows=1 loops=3)
+->  Index Scan using category_pkey on category c  (cost=0.29..0.31 rows=1 width=18) (actual time=0.001..0.001 rows=1 loops=24)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=210 read=63249
+Buffers: shared hit=210 read=63249
+Buffers: shared hit=138 read=63249
+Buffers: shared hit=101 read=63249
+Buffers: shared hit=33 read=63245
+Buffers: shared hit=13 read=1
+Buffers: shared hit=13 read=1
+Buffers: shared hit=37
+Buffers: shared hit=72
+Buffers: shared hit=51
+
+
+====================================================================================================
+QUERY ID : 23
+TÍTULO   : Categorias e produtos associados
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT c.cat_nome, p.ASIN, pi.title FROM CATEGORY c JOIN PRODUCT_CAT pc ON c.cat_id = pc.id_final_cat JOIN PRODUCT p ON pc.Pid = p.Pid JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Hash Join  (cost=1451.24..156090.78 rows=2482852 width=70) (actual time=14.144..1129.369 rows=2509699 loops=1)
+  Hash Cond: (pc.id_final_cat = c.cat_id)
+  Buffers: shared hit=3507 read=19995
+  ->  Merge Join  (cost=3.48..148124.98 rows=2482852 width=60) (actual time=4.200..685.826 rows=2509699 loops=1)
+        Merge Cond: (p.pid = pc.pid)
+        Buffers: shared hit=3505 read=19671
+        ->  Merge Join  (cost=1.45..47099.98 rows=542684 width=64) (actual time=4.186..240.979 rows=542684 loops=1)
+              Merge Cond: (p.pid = pi.pid)
+              Buffers: shared hit=3499 read=11356
+              ->  Index Scan using product_pkey on product p  (cost=0.42..17221.70 rows=548552 width=15) (actual time=0.005..62.303 rows=548552 loops=1)
+                    Buffers: shared hit=2210 read=2257
+              ->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..21723.69 rows=542684 width=49) (actual time=0.008..65.781 rows=542684 loops=1)
+                    Buffers: shared hit=1289 read=9099
+        ->  Index Only Scan using product_cat_pkey on product_cat pc  (cost=0.43..68568.29 rows=2509699 width=8) (actual time=0.007..206.054 rows=2509699 loops=1)
+              Heap Fetches: 328799
+              Buffers: shared hit=6 read=8315
+  ->  Hash  (cost=824.56..824.56 rows=49856 width=18) (actual time=9.904..9.905 rows=49732 loops=1)
+        Buckets: 65536  Batches: 1  Memory Usage: 3024kB
+        Buffers: shared hit=2 read=324
+        ->  Seq Scan on category c  (cost=0.00..824.56 rows=49856 width=18) (actual time=0.008..3.546 rows=49732 loops=1)
+              Buffers: shared hit=2 read=324
+Planning:
+  Buffers: shared hit=86
+Planning Time: 0.748 ms
+JIT:
+  Functions: 18
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.497 ms, Inlining 0.000 ms, Optimization 0.230 ms, Emission 3.952 ms, Total 4.678 ms
+Execution Time: 1201.641 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_pkey on product p  (cost=0.42..17221.70 rows=548552 width=15) (actual time=0.005..62.303 rows=548552 loops=1)
+->  Index Scan using product_info_pkey on product_info pi  (cost=0.42..21723.69 rows=542684 width=49) (actual time=0.008..65.781 rows=542684 loops=1)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=3507 read=19995
+Buffers: shared hit=3505 read=19671
+Buffers: shared hit=3499 read=11356
+Buffers: shared hit=2210 read=2257
+Buffers: shared hit=1289 read=9099
+Buffers: shared hit=6 read=8315
+Buffers: shared hit=2 read=324
+Buffers: shared hit=2 read=324
+Buffers: shared hit=86
+
+
+====================================================================================================
+QUERY ID : 24
+TÍTULO   : Produtos similares e reviews
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT sp.ASIN_SIM, pi.title, r.rating FROM PRODUCT p JOIN SIMILAR_PRODUCT sp ON p.Pid = sp.Pid JOIN PRODUCT p2 ON sp.ASIN_SIM = p2.ASIN JOIN PRODUCT_INFO pi ON p2.Pid = pi.Pid JOIN REVIEW r ON p2.Pid = r.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Gather  (cost=1019.76..77101.06 rows=42 width=58) (actual time=11.076..302.791 rows=79 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=74812 read=55277 written=8
+  ->  Nested Loop  (cost=19.76..76096.86 rows=18 width=58) (actual time=23.264..234.008 rows=26 loops=3)
+        Buffers: shared hit=74812 read=55277 written=8
+        ->  Merge Join  (cost=19.33..19141.74 rows=1 width=64) (actual time=21.676..30.408 rows=2 loops=3)
+              Merge Cond: (pi.pid = p2.pid)
+              Buffers: shared hit=2373 read=7054 written=2
+              ->  Parallel Index Scan using product_info_pkey on product_info pi  (cost=0.42..18558.03 rows=226118 width=49) (actual time=0.024..22.560 rows=149918 loops=3)
+                    Buffers: shared hit=2280 read=7051 written=2
+              ->  Sort  (cost=18.40..18.40 rows=3 width=15) (actual time=0.113..0.118 rows=5 loops=3)
+                    Sort Key: p2.pid
+                    Sort Method: quicksort  Memory: 25kB
+                    Buffers: shared hit=93 read=3
+                    Worker 0:  Sort Method: quicksort  Memory: 25kB
+                    Worker 1:  Sort Method: quicksort  Memory: 25kB
+                    ->  Nested Loop  (cost=1.28..18.37 rows=3 width=15) (actual time=0.062..0.100 rows=5 loops=3)
+                          Buffers: shared hit=85 read=3
+                          ->  Nested Loop  (cost=0.85..17.01 rows=3 width=11) (actual time=0.051..0.054 rows=5 loops=3)
+                                Buffers: shared hit=27 read=1
+                                ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.022..0.023 rows=1 loops=3)
+                                      Index Cond: (asin = '0738700797'::bpchar)
+                                      Buffers: shared hit=14
+                                ->  Index Only Scan using similar_product_pkey on similar_product sp  (cost=0.43..8.52 rows=5 width=15) (actual time=0.027..0.028 rows=5 loops=3)
+                                      Index Cond: (pid = p.pid)
+                                      Heap Fetches: 0
+                                      Buffers: shared hit=13 read=1
+                          ->  Index Scan using product_asin_key on product p2  (cost=0.42..0.46 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=15)
+                                Index Cond: (asin = sp.asin_sim)
+                                Buffers: shared hit=58 read=2
+        ->  Index Scan using review_pkey on review r  (cost=0.43..56953.19 rows=192 width=6) (actual time=2.437..122.142 rows=16 loops=5)
+              Index Cond: (pid = p2.pid)
+              Buffers: shared hit=72439 read=48223 written=6
+Planning:
+  Buffers: shared hit=89 read=7
+Planning Time: 0.736 ms
+Execution Time: 302.836 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Parallel Index Scan using product_info_pkey on product_info pi  (cost=0.42..18558.03 rows=226118 width=49) (actual time=0.024..22.560 rows=149918 loops=3)
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=0.022..0.023 rows=1 loops=3)
+->  Index Scan using product_asin_key on product p2  (cost=0.42..0.46 rows=1 width=15) (actual time=0.009..0.009 rows=1 loops=15)
+->  Index Scan using review_pkey on review r  (cost=0.43..56953.19 rows=192 width=6) (actual time=2.437..122.142 rows=16 loops=5)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=74812 read=55277 written=8
+Buffers: shared hit=74812 read=55277 written=8
+Buffers: shared hit=2373 read=7054 written=2
+Buffers: shared hit=2280 read=7051 written=2
+Buffers: shared hit=93 read=3
+Buffers: shared hit=85 read=3
+Buffers: shared hit=27 read=1
+Buffers: shared hit=14
+Buffers: shared hit=13 read=1
+Buffers: shared hit=58 read=2
+Buffers: shared hit=72439 read=48223 written=6
+Buffers: shared hit=89 read=7
+
+
+====================================================================================================
+QUERY ID : 25
+TÍTULO   : Produto e quantidade de categorias
+CATEGORIA: Joins
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.title, c.cat_nome FROM PRODUCT p JOIN PRODUCT_INFO pi ON p.Pid = pi.Pid JOIN PRODUCT_CAT pc ON p.Pid = pc.Pid JOIN CATEGORY c ON pc.id_final_cat = c.cat_id WHERE pi.p_group = 'Book';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Hash Join  (cost=52907.17..145153.39 rows=1804868 width=70) (actual time=422.536..1417.869 rows=1440329 loops=1)
+  Hash Cond: (pc.id_final_cat = c.cat_id)
+  Buffers: shared hit=10 read=22007, temp read=16857 written=16857
+  ->  Hash Join  (cost=51459.41..138967.45 rows=1804868 width=60) (actual time=406.301..1162.121 rows=1440329 loops=1)
+        Hash Cond: (pc.pid = p.pid)
+        Buffers: shared hit=9 read=21682, temp read=16857 written=16857
+        ->  Seq Scan on product_cat pc  (cost=0.00..36201.99 rows=2509699 width=8) (actual time=0.008..122.234 rows=2509699 loops=1)
+              Buffers: shared hit=1 read=11104
+        ->  Hash  (cost=42290.22..42290.22 rows=394495 width=64) (actual time=405.731..405.733 rows=393561 loops=1)
+              Buckets: 131072  Batches: 8  Memory Usage: 6122kB
+              Buffers: shared hit=8 read=10578, temp read=5392 written=9338
+              ->  Hash Join  (cost=23187.74..42290.22 rows=394495 width=64) (actual time=119.956..332.081 rows=393561 loops=1)
+                    Hash Cond: (p.pid = pi.pid)
+                    Buffers: shared hit=8 read=10578, temp read=5392 written=5392
+                    ->  Seq Scan on product p  (cost=0.00..8451.52 rows=548552 width=15) (actual time=0.017..38.115 rows=548552 loops=1)
+                          Buffers: shared hit=2 read=2964
+                    ->  Hash  (cost=14403.55..14403.55 rows=394495 width=49) (actual time=119.380..119.380 rows=393561 loops=1)
+                          Buckets: 131072  Batches: 8  Memory Usage: 5352kB
+                          Buffers: shared hit=6 read=7614, temp written=3273
+                          ->  Seq Scan on product_info pi  (cost=0.00..14403.55 rows=394495 width=49) (actual time=0.013..55.156 rows=393561 loops=1)
+                                Filter: ((p_group)::text = 'Book'::text)
+                                Rows Removed by Filter: 149123
+                                Buffers: shared hit=6 read=7614
+  ->  Hash  (cost=824.56..824.56 rows=49856 width=18) (actual time=16.194..16.195 rows=49732 loops=1)
+        Buckets: 65536  Batches: 1  Memory Usage: 3024kB
+        Buffers: shared hit=1 read=325
+        ->  Seq Scan on category c  (cost=0.00..824.56 rows=49856 width=18) (actual time=6.939..10.310 rows=49732 loops=1)
+              Buffers: shared hit=1 read=325
+Planning:
+  Buffers: shared hit=89 read=26
+Planning Time: 0.623 ms
+JIT:
+  Functions: 29
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.547 ms, Inlining 0.000 ms, Optimization 0.338 ms, Emission 6.660 ms, Total 7.544 ms
+Execution Time: 1460.979 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=10 read=22007, temp read=16857 written=16857
+Buffers: shared hit=9 read=21682, temp read=16857 written=16857
+Buffers: shared hit=1 read=11104
+Buffers: shared hit=8 read=10578, temp read=5392 written=9338
+Buffers: shared hit=8 read=10578, temp read=5392 written=5392
+Buffers: shared hit=2 read=2964
+Buffers: shared hit=6 read=7614, temp written=3273
+Buffers: shared hit=6 read=7614
+Buffers: shared hit=1 read=325
+Buffers: shared hit=1 read=325
+Buffers: shared hit=89 read=26
+
+
+====================================================================================================
+QUERY ID : 26
+TÍTULO   : Quantidade total de produtos
+CATEGORIA: Agregações
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT COUNT(*) AS total_produtos FROM PRODUCT;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize Aggregate  (cost=7999.58..7999.59 rows=1 width=8) (actual time=32.436..38.512 rows=1 loops=1)
+  Buffers: shared hit=2966
+  ->  Gather  (cost=7999.47..7999.58 rows=1 width=8) (actual time=32.352..38.506 rows=2 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=2966
+        ->  Partial Aggregate  (cost=6999.47..6999.48 rows=1 width=8) (actual time=23.230..23.231 rows=1 loops=2)
+              Buffers: shared hit=2966
+              ->  Parallel Seq Scan on product  (cost=0.00..6192.78 rows=322678 width=0) (actual time=0.008..12.986 rows=274276 loops=2)
+                    Buffers: shared hit=2966
+Planning:
+  Buffers: shared hit=2 read=4
+Planning Time: 0.915 ms
+Execution Time: 38.539 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=2966
+Buffers: shared hit=2966
+Buffers: shared hit=2966
+Buffers: shared hit=2966
+Buffers: shared hit=2 read=4
+
+
+====================================================================================================
+QUERY ID : 27
+TÍTULO   : Média de avaliações de um produto
+CATEGORIA: Agregações
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT AVG(r.rating) AS media_reviews FROM REVIEW r JOIN PRODUCT p ON r.Pid = p.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize Aggregate  (cost=104230.99..104231.00 rows=1 width=32) (actual time=448.873..448.994 rows=1 loops=1)
+  Buffers: shared hit=63 read=63287
+  ->  Gather  (cost=104230.77..104230.98 rows=2 width=32) (actual time=307.491..307.720 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=63 read=63287
+        ->  Partial Aggregate  (cost=103230.77..103230.78 rows=1 width=32) (actual time=294.792..294.795 rows=1 loops=3)
+              Buffers: shared hit=63 read=63287
+              ->  Hash Join  (cost=8.46..103230.76 rows=6 width=2) (actual time=195.369..294.769 rows=4 loops=3)
+                    Hash Cond: (r.pid = p.pid)
+                    Buffers: shared hit=63 read=63287
+                    ->  Parallel Seq Scan on review r  (cost=0.00..94917.00 rows=3163900 width=6) (actual time=0.014..140.432 rows=2531081 loops=3)
+                          Buffers: shared hit=2 read=63276
+                    ->  Hash  (cost=8.44..8.44 rows=1 width=4) (actual time=6.265..6.266 rows=1 loops=3)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=10 read=4
+                          ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=6.249..6.253 rows=1 loops=3)
+                                Index Cond: (asin = '0738700797'::bpchar)
+                                Buffers: shared hit=10 read=4
+Planning:
+  Buffers: shared hit=12 read=4
+Planning Time: 0.920 ms
+JIT:
+  Functions: 44
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.501 ms, Inlining 0.000 ms, Optimization 0.747 ms, Emission 17.999 ms, Total 20.248 ms
+Execution Time: 449.537 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=6.249..6.253 rows=1 loops=3)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=63 read=63287
+Buffers: shared hit=63 read=63287
+Buffers: shared hit=63 read=63287
+Buffers: shared hit=63 read=63287
+Buffers: shared hit=2 read=63276
+Buffers: shared hit=10 read=4
+Buffers: shared hit=10 read=4
+Buffers: shared hit=12 read=4
+
+
+====================================================================================================
+QUERY ID : 28
+TÍTULO   : Maior sales rank
+CATEGORIA: Agregações
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT MAX(salesrank) AS maior_sales_rank FROM PRODUCT_INFO;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize Aggregate  (cost=11446.69..11446.70 rows=1 width=4) (actual time=32.364..36.003 rows=1 loops=1)
+  Buffers: shared hit=38 read=7582
+  ->  Gather  (cost=11446.48..11446.69 rows=2 width=4) (actual time=32.309..35.999 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=38 read=7582
+        ->  Partial Aggregate  (cost=10446.48..10446.49 rows=1 width=4) (actual time=21.015..21.016 rows=1 loops=3)
+              Buffers: shared hit=38 read=7582
+              ->  Parallel Seq Scan on product_info  (cost=0.00..9881.18 rows=226118 width=4) (actual time=0.012..11.665 rows=180895 loops=3)
+                    Buffers: shared hit=38 read=7582
+Planning:
+  Buffers: shared hit=6 read=1
+Planning Time: 0.308 ms
+Execution Time: 36.021 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=38 read=7582
+Buffers: shared hit=38 read=7582
+Buffers: shared hit=38 read=7582
+Buffers: shared hit=38 read=7582
+Buffers: shared hit=6 read=1
+
+
+====================================================================================================
+QUERY ID : 29
+TÍTULO   : Menor sales rank
+CATEGORIA: Agregações
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT MIN(salesrank) AS menor_sales_rank FROM PRODUCT_INFO;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize Aggregate  (cost=11446.69..11446.70 rows=1 width=4) (actual time=31.534..35.271 rows=1 loops=1)
+  Buffers: shared hit=134 read=7486
+  ->  Gather  (cost=11446.48..11446.69 rows=2 width=4) (actual time=31.467..35.266 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=134 read=7486
+        ->  Partial Aggregate  (cost=10446.48..10446.49 rows=1 width=4) (actual time=20.725..20.726 rows=1 loops=3)
+              Buffers: shared hit=134 read=7486
+              ->  Parallel Seq Scan on product_info  (cost=0.00..9881.18 rows=226118 width=4) (actual time=0.014..11.483 rows=180895 loops=3)
+                    Buffers: shared hit=134 read=7486
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.061 ms
+Execution Time: 35.286 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=134 read=7486
+Buffers: shared hit=134 read=7486
+Buffers: shared hit=134 read=7486
+Buffers: shared hit=134 read=7486
+Buffers: shared hit=3
+
+
+====================================================================================================
+QUERY ID : 30
+TÍTULO   : Soma total de votos úteis
+CATEGORIA: Agregações
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT SUM(helpful) AS soma_helpful FROM REVIEW;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize Aggregate  (cost=103826.96..103826.97 rows=1 width=8) (actual time=286.764..291.236 rows=1 loops=1)
+  Buffers: shared hit=98 read=63180
+  ->  Gather  (cost=103826.75..103826.96 rows=2 width=8) (actual time=286.656..291.223 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=98 read=63180
+        ->  Partial Aggregate  (cost=102826.75..102826.76 rows=1 width=8) (actual time=273.886..273.887 rows=1 loops=3)
+              Buffers: shared hit=98 read=63180
+              ->  Parallel Seq Scan on review  (cost=0.00..94917.00 rows=3163900 width=4) (actual time=0.019..137.184 rows=2531081 loops=3)
+                    Buffers: shared hit=98 read=63180
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.061 ms
+JIT:
+  Functions: 11
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.698 ms, Inlining 0.000 ms, Optimization 0.549 ms, Emission 7.333 ms, Total 8.580 ms
+Execution Time: 291.625 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=98 read=63180
+Buffers: shared hit=98 read=63180
+Buffers: shared hit=98 read=63180
+Buffers: shared hit=98 read=63180
+Buffers: shared hit=3
+
+
+====================================================================================================
+QUERY ID : 31
+TÍTULO   : Quantidade de reviews do produto
+CATEGORIA: Agregações
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT COUNT(*) AS total_reviews FROM REVIEW r JOIN PRODUCT p ON r.Pid = p.Pid WHERE p.ASIN = '0738700797';
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize Aggregate  (cost=104230.99..104231.00 rows=1 width=8) (actual time=307.840..312.230 rows=1 loops=1)
+  Buffers: shared hit=266 read=63084
+  ->  Gather  (cost=104230.77..104230.98 rows=2 width=8) (actual time=307.734..312.219 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=266 read=63084
+        ->  Partial Aggregate  (cost=103230.77..103230.78 rows=1 width=8) (actual time=295.847..295.849 rows=1 loops=3)
+              Buffers: shared hit=266 read=63084
+              ->  Hash Join  (cost=8.46..103230.76 rows=6 width=0) (actual time=194.694..295.826 rows=4 loops=3)
+                    Hash Cond: (r.pid = p.pid)
+                    Buffers: shared hit=266 read=63084
+                    ->  Parallel Seq Scan on review r  (cost=0.00..94917.00 rows=3163900 width=4) (actual time=0.020..138.369 rows=2531081 loops=3)
+                          Buffers: shared hit=194 read=63084
+                    ->  Hash  (cost=8.44..8.44 rows=1 width=4) (actual time=5.054..5.055 rows=1 loops=3)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=14
+                          ->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=5.035..5.040 rows=1 loops=3)
+                                Index Cond: (asin = '0738700797'::bpchar)
+                                Buffers: shared hit=14
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.147 ms
+JIT:
+  Functions: 41
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.118 ms, Inlining 0.000 ms, Optimization 0.774 ms, Emission 14.320 ms, Total 16.212 ms
+Execution Time: 312.646 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+->  Index Scan using product_asin_key on product p  (cost=0.42..8.44 rows=1 width=4) (actual time=5.035..5.040 rows=1 loops=3)
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=266 read=63084
+Buffers: shared hit=266 read=63084
+Buffers: shared hit=266 read=63084
+Buffers: shared hit=266 read=63084
+Buffers: shared hit=194 read=63084
+Buffers: shared hit=14
+Buffers: shared hit=14
+Buffers: shared hit=4
+
+
+====================================================================================================
+QUERY ID : 32
+TÍTULO   : Quantidade de reviews por ano
+CATEGORIA: Group By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT EXTRACT(YEAR FROM DATE) AS ANO,
+       COUNT(*) AS TOTAL_REVIEWS
+FROM REVIEW
+GROUP BY ANO
+ORDER BY ANO ASC;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize GroupAggregate  (cost=119860.52..120639.59 rows=3045 width=40) (actual time=665.818..671.019 rows=12 loops=1)
+  Group Key: (EXTRACT(year FROM date))
+  Buffers: shared hit=304 read=62988
+  ->  Gather Merge  (cost=119860.52..120571.07 rows=6090 width=40) (actual time=665.806..671.003 rows=35 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=304 read=62988
+        ->  Sort  (cost=118860.50..118868.11 rows=3045 width=40) (actual time=653.830..653.831 rows=12 loops=3)
+              Sort Key: (EXTRACT(year FROM date))
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=304 read=62988
+              Worker 0:  Sort Method: quicksort  Memory: 25kB
+              Worker 1:  Sort Method: quicksort  Memory: 25kB
+              ->  Partial HashAggregate  (cost=118646.25..118684.31 rows=3045 width=40) (actual time=653.802..653.810 rows=12 loops=3)
+                    Group Key: EXTRACT(year FROM date)
+                    Batches: 1  Memory Usage: 121kB
+                    Buffers: shared hit=290 read=62988
+                    Worker 0:  Batches: 1  Memory Usage: 121kB
+                    Worker 1:  Batches: 1  Memory Usage: 121kB
+                    ->  Parallel Seq Scan on review  (cost=0.00..102826.75 rows=3163900 width=32) (actual time=3.250..357.380 rows=2531081 loops=3)
+                          Buffers: shared hit=290 read=62988
+Planning:
+  Buffers: shared hit=8 read=2
+Planning Time: 0.096 ms
+JIT:
+  Functions: 21
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.310 ms, Inlining 0.000 ms, Optimization 0.539 ms, Emission 9.211 ms, Total 11.059 ms
+Execution Time: 671.893 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=304 read=62988
+Buffers: shared hit=304 read=62988
+Buffers: shared hit=304 read=62988
+Buffers: shared hit=290 read=62988
+Buffers: shared hit=290 read=62988
+Buffers: shared hit=8 read=2
+
+
+====================================================================================================
+QUERY ID : 33
+TÍTULO   : Quantidade de reviews por nota
+CATEGORIA: Group By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT RATING, COUNT(*) AS TOTAL_REVIEWS
+FROM REVIEW
+GROUP BY RATING
+ORDER BY RATING ASC;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize GroupAggregate  (cost=111736.63..111737.90 rows=5 width=10) (actual time=420.229..424.931 rows=5 loops=1)
+  Group Key: rating
+  Buffers: shared hit=400 read=62892
+  ->  Gather Merge  (cost=111736.63..111737.80 rows=10 width=10) (actual time=420.217..424.918 rows=15 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=400 read=62892
+        ->  Sort  (cost=110736.61..110736.62 rows=5 width=10) (actual time=408.455..408.456 rows=5 loops=3)
+              Sort Key: rating
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=400 read=62892
+              Worker 0:  Sort Method: quicksort  Memory: 25kB
+              Worker 1:  Sort Method: quicksort  Memory: 25kB
+              ->  Partial HashAggregate  (cost=110736.50..110736.55 rows=5 width=10) (actual time=408.436..408.438 rows=5 loops=3)
+                    Group Key: rating
+                    Batches: 1  Memory Usage: 24kB
+                    Buffers: shared hit=386 read=62892
+                    Worker 0:  Batches: 1  Memory Usage: 24kB
+                    Worker 1:  Batches: 1  Memory Usage: 24kB
+                    ->  Parallel Seq Scan on review  (cost=0.00..94917.00 rows=3163900 width=2) (actual time=0.024..141.369 rows=2531081 loops=3)
+                          Buffers: shared hit=386 read=62892
+Planning:
+  Buffers: shared hit=9
+Planning Time: 0.119 ms
+JIT:
+  Functions: 18
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.978 ms, Inlining 0.000 ms, Optimization 0.575 ms, Emission 8.686 ms, Total 10.238 ms
+Execution Time: 425.509 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=400 read=62892
+Buffers: shared hit=400 read=62892
+Buffers: shared hit=400 read=62892
+Buffers: shared hit=386 read=62892
+Buffers: shared hit=386 read=62892
+Buffers: shared hit=9
+
+
+====================================================================================================
+QUERY ID : 34
+TÍTULO   : Quantidade de produtos por grupo
+CATEGORIA: Group By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT P_GROUP, COUNT(*) AS TOTAL_PRODUTOS
+FROM PRODUCT_INFO
+GROUP BY P_GROUP
+ORDER BY TOTAL_PRODUTOS DESC;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Sort  (cost=12012.93..12012.94 rows=4 width=13) (actual time=44.897..48.649 rows=9 loops=1)
+  Sort Key: (count(*)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=249 read=7390
+  ->  Finalize GroupAggregate  (cost=12011.88..12012.89 rows=4 width=13) (actual time=44.883..48.642 rows=9 loops=1)
+        Group Key: p_group
+        Buffers: shared hit=246 read=7390
+        ->  Gather Merge  (cost=12011.88..12012.81 rows=8 width=13) (actual time=44.880..48.634 rows=23 loops=1)
+              Workers Planned: 2
+              Workers Launched: 2
+              Buffers: shared hit=246 read=7390
+              ->  Sort  (cost=11011.85..11011.86 rows=4 width=13) (actual time=33.769..33.770 rows=8 loops=3)
+                    Sort Key: p_group
+                    Sort Method: quicksort  Memory: 25kB
+                    Buffers: shared hit=246 read=7390
+                    Worker 0:  Sort Method: quicksort  Memory: 25kB
+                    Worker 1:  Sort Method: quicksort  Memory: 25kB
+                    ->  Partial HashAggregate  (cost=11011.77..11011.81 rows=4 width=13) (actual time=33.749..33.750 rows=8 loops=3)
+                          Group Key: p_group
+                          Batches: 1  Memory Usage: 24kB
+                          Buffers: shared hit=230 read=7390
+                          Worker 0:  Batches: 1  Memory Usage: 24kB
+                          Worker 1:  Batches: 1  Memory Usage: 24kB
+                          ->  Parallel Seq Scan on product_info  (cost=0.00..9881.18 rows=226118 width=5) (actual time=0.018..12.148 rows=180895 loops=3)
+                                Buffers: shared hit=230 read=7390
+Planning:
+  Buffers: shared hit=14 read=1
+Planning Time: 0.074 ms
+Execution Time: 48.683 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=249 read=7390
+Buffers: shared hit=246 read=7390
+Buffers: shared hit=246 read=7390
+Buffers: shared hit=246 read=7390
+Buffers: shared hit=230 read=7390
+Buffers: shared hit=230 read=7390
+Buffers: shared hit=14 read=1
+
+
+====================================================================================================
+QUERY ID : 35
+TÍTULO   : Média de votos úteis por nota
+CATEGORIA: Group By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT RATING, AVG(HELPFUL)::NUMERIC(10,2) AS MEDIA_HELPFUL
+FROM REVIEW
+GROUP BY RATING
+ORDER BY RATING ASC;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize GroupAggregate  (cost=111736.63..111737.92 rows=5 width=18) (actual time=447.565..452.189 rows=5 loops=1)
+  Group Key: rating
+  Buffers: shared hit=496 read=62796
+  ->  Gather Merge  (cost=111736.63..111737.80 rows=10 width=34) (actual time=447.550..452.172 rows=15 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=496 read=62796
+        ->  Sort  (cost=110736.61..110736.62 rows=5 width=34) (actual time=434.844..434.845 rows=5 loops=3)
+              Sort Key: rating
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=496 read=62796
+              Worker 0:  Sort Method: quicksort  Memory: 25kB
+              Worker 1:  Sort Method: quicksort  Memory: 25kB
+              ->  Partial HashAggregate  (cost=110736.50..110736.55 rows=5 width=34) (actual time=434.822..434.824 rows=5 loops=3)
+                    Group Key: rating
+                    Batches: 1  Memory Usage: 24kB
+                    Buffers: shared hit=482 read=62796
+                    Worker 0:  Batches: 1  Memory Usage: 24kB
+                    Worker 1:  Batches: 1  Memory Usage: 24kB
+                    ->  Parallel Seq Scan on review  (cost=0.00..94917.00 rows=3163900 width=6) (actual time=0.021..142.344 rows=2531081 loops=3)
+                          Buffers: shared hit=482 read=62796
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.079 ms
+JIT:
+  Functions: 21
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 1.226 ms, Inlining 0.000 ms, Optimization 0.707 ms, Emission 11.421 ms, Total 13.354 ms
+Execution Time: 452.735 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=496 read=62796
+Buffers: shared hit=496 read=62796
+Buffers: shared hit=496 read=62796
+Buffers: shared hit=482 read=62796
+Buffers: shared hit=482 read=62796
+Buffers: shared hit=3
+
+
+====================================================================================================
+QUERY ID : 36
+TÍTULO   : Quantidade de produtos por categoria
+CATEGORIA: Group By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT c.CAT_NOME, COUNT(pc.PID) AS TOTAL_PRODUTOS
+FROM CATEGORY c
+JOIN PRODUCT_CAT pc ON c.CAT_ID = pc.ID_FINAL_CAT
+GROUP BY c.CAT_NOME
+ORDER BY TOTAL_PRODUTOS DESC;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Sort  (cost=39226.75..39286.56 rows=23926 width=22) (actual time=388.300..391.313 rows=25086 loops=1)
+  Sort Key: (count(pc.pid)) DESC
+  Sort Method: quicksort  Memory: 2388kB
+  Buffers: shared hit=1039 read=11072
+  ->  Finalize HashAggregate  (cost=37247.32..37486.58 rows=23926 width=22) (actual time=381.158..384.477 rows=25086 loops=1)
+        Group Key: c.cat_nome
+        Batches: 1  Memory Usage: 3089kB
+        Buffers: shared hit=1039 read=11072
+        ->  Gather  (cost=31983.60..37008.06 rows=47852 width=22) (actual time=358.879..365.886 rows=64908 loops=1)
+              Workers Planned: 2
+              Workers Launched: 2
+              Buffers: shared hit=1039 read=11072
+              ->  Partial HashAggregate  (cost=30983.60..31222.86 rows=23926 width=22) (actual time=347.786..351.538 rows=21636 loops=3)
+                    Group Key: c.cat_nome
+                    Batches: 1  Memory Usage: 2833kB
+                    Buffers: shared hit=1039 read=11072
+                    Worker 0:  Batches: 1  Memory Usage: 2833kB
+                    Worker 1:  Batches: 1  Memory Usage: 2833kB
+                    ->  Hash Join  (cost=1447.76..25755.06 rows=1045708 width=18) (actual time=11.461..214.415 rows=836566 loops=3)
+                          Hash Cond: (pc.id_final_cat = c.cat_id)
+                          Buffers: shared hit=1039 read=11072
+                          ->  Parallel Seq Scan on product_cat pc  (cost=0.00..21562.08 rows=1045708 width=8) (actual time=0.019..42.345 rows=836566 loops=3)
+                                Buffers: shared hit=33 read=11072
+                          ->  Hash  (cost=824.56..824.56 rows=49856 width=18) (actual time=11.275..11.275 rows=49732 loops=3)
+                                Buckets: 65536  Batches: 1  Memory Usage: 3024kB
+                                Buffers: shared hit=978
+                                ->  Seq Scan on category c  (cost=0.00..824.56 rows=49856 width=18) (actual time=0.013..3.884 rows=49732 loops=3)
+                                      Buffers: shared hit=978
+Planning:
+  Buffers: shared hit=10
+Planning Time: 0.156 ms
+Execution Time: 393.320 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=1039 read=11072
+Buffers: shared hit=1039 read=11072
+Buffers: shared hit=1039 read=11072
+Buffers: shared hit=1039 read=11072
+Buffers: shared hit=1039 read=11072
+Buffers: shared hit=33 read=11072
+Buffers: shared hit=978
+Buffers: shared hit=978
+Buffers: shared hit=10
+
+
+====================================================================================================
+QUERY ID : 37
+TÍTULO   : Top 20 produtos mais baixados
+CATEGORIA: Order By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, pi.TITLE, pi.DOWNLOADS
+FROM PRODUCT p
+JOIN PRODUCT_INFO pi ON p.PID = pi.PID
+ORDER BY pi.DOWNLOADS DESC NULLS LAST
+LIMIT 20;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Limit  (cost=36811.97..36814.27 rows=20 width=60) (actual time=226.989..241.213 rows=20 loops=1)
+  Buffers: shared hit=3395 read=7294, temp read=6773 written=6816
+  ->  Gather Merge  (cost=36811.97..73522.96 rows=319226 width=60) (actual time=226.988..241.210 rows=20 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=3395 read=7294, temp read=6773 written=6816
+        ->  Sort  (cost=35811.96..36610.03 rows=319226 width=60) (actual time=218.541..218.544 rows=16 loops=2)
+              Sort Key: pi.downloads DESC NULLS LAST
+              Sort Method: top-N heapsort  Memory: 29kB
+              Buffers: shared hit=3395 read=7294, temp read=6773 written=6816
+              Worker 0:  Sort Method: top-N heapsort  Memory: 28kB
+              ->  Parallel Hash Join  (cost=14916.66..27317.48 rows=319226 width=60) (actual time=131.485..189.730 rows=271342 loops=2)
+                    Hash Cond: (p.pid = pi.pid)
+                    Buffers: shared hit=3339 read=7294, temp read=6773 written=6816
+                    ->  Parallel Seq Scan on product p  (cost=0.00..6192.78 rows=322678 width=15) (actual time=0.006..18.740 rows=274276 loops=2)
+                          Buffers: shared hit=2966
+                    ->  Parallel Hash  (cost=9881.18..9881.18 rows=226118 width=53) (actual time=74.048..74.049 rows=271342 loops=2)
+                          Buckets: 131072  Batches: 8  Memory Usage: 6976kB
+                          Buffers: shared hit=326 read=7294, temp written=4376
+                          ->  Parallel Seq Scan on product_info pi  (cost=0.00..9881.18 rows=226118 width=53) (actual time=0.018..27.446 rows=271342 loops=2)
+                                Buffers: shared hit=326 read=7294
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.153 ms
+Execution Time: 241.237 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=3395 read=7294, temp read=6773 written=6816
+Buffers: shared hit=3395 read=7294, temp read=6773 written=6816
+Buffers: shared hit=3395 read=7294, temp read=6773 written=6816
+Buffers: shared hit=3339 read=7294, temp read=6773 written=6816
+Buffers: shared hit=2966
+Buffers: shared hit=326 read=7294, temp written=4376
+Buffers: shared hit=326 read=7294
+Buffers: shared hit=18
+
+
+====================================================================================================
+QUERY ID : 38
+TÍTULO   : Top 30 reviews mais úteis
+CATEGORIA: Order By
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT REV_ID, PID, CUTOMER, RATING, HELPFUL
+FROM REVIEW
+ORDER BY HELPFUL DESC, VOTES DESC
+LIMIT 30;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Limit  (cost=189361.08..189364.58 rows=30 width=32) (actual time=532.283..536.847 rows=30 loops=1)
+  Buffers: shared hit=650 read=62700
+  ->  Gather Merge  (cost=189361.08..927655.96 rows=6327800 width=32) (actual time=530.698..535.260 rows=30 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=650 read=62700
+        ->  Sort  (cost=188361.06..196270.81 rows=3163900 width=32) (actual time=519.197..519.199 rows=23 loops=3)
+              Sort Key: helpful DESC, votes DESC
+              Sort Method: top-N heapsort  Memory: 28kB
+              Buffers: shared hit=650 read=62700
+              Worker 0:  Sort Method: top-N heapsort  Memory: 28kB
+              Worker 1:  Sort Method: top-N heapsort  Memory: 28kB
+              ->  Parallel Seq Scan on review  (cost=0.00..94917.00 rows=3163900 width=32) (actual time=1.618..225.338 rows=2531081 loops=3)
+                    Buffers: shared hit=578 read=62700
+Planning Time: 0.054 ms
+JIT:
+  Functions: 7
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.403 ms, Inlining 0.000 ms, Optimization 0.527 ms, Emission 5.841 ms, Total 6.771 ms
+Execution Time: 537.071 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=650 read=62700
+Buffers: shared hit=650 read=62700
+Buffers: shared hit=650 read=62700
+Buffers: shared hit=578 read=62700
+
+
+====================================================================================================
+QUERY ID : 39
+TÍTULO   : Produtos acima da média global de avaliações
+CATEGORIA: Subquery
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, AVG(r.RATING)::NUMERIC(10,2) AS MEDIA_AVALIACAO
+FROM PRODUCT p
+JOIN REVIEW r ON p.PID = r.PID
+GROUP BY p.ASIN
+HAVING AVG(r.RATING) > (
+    SELECT AVG(RATING)
+    FROM REVIEW
+);
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Finalize GroupAggregate  (cost=554384.34..696559.67 rows=182851 width=27) (actual time=2094.339..2513.071 rows=258000 loops=1)
+  Group Key: p.asin
+  Filter: (avg(r.rating) > $1)
+  Rows Removed by Filter: 144724
+  Buffers: shared hit=4446 read=125112, temp read=52888 written=75709
+  InitPlan 1 (returns $1)
+    ->  Finalize Aggregate  (cost=103826.97..103826.98 rows=1 width=32) (actual time=301.945..302.031 rows=1 loops=1)
+          Buffers: shared hit=770 read=62508
+          ->  Gather  (cost=103826.75..103826.96 rows=2 width=32) (actual time=301.835..302.018 rows=3 loops=1)
+                Workers Planned: 2
+                Workers Launched: 2
+                Buffers: shared hit=770 read=62508
+                ->  Partial Aggregate  (cost=102826.75..102826.76 rows=1 width=32) (actual time=289.942..289.943 rows=1 loops=3)
+                      Buffers: shared hit=770 read=62508
+                      ->  Parallel Seq Scan on review  (cost=0.00..94917.00 rows=3163900 width=2) (actual time=0.020..140.057 rows=2531081 loops=3)
+                            Buffers: shared hit=770 read=62508
+  ->  Gather Merge  (cost=450557.36..578561.76 rows=1097104 width=43) (actual time=1792.347..2042.296 rows=403620 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=3676 read=62604, temp read=52888 written=75709
+        ->  Sort  (cost=449557.34..450928.72 rows=548552 width=43) (actual time=1761.592..1812.198 rows=134540 loops=3)
+              Sort Key: p.asin
+              Sort Method: external merge  Disk: 7776kB
+              Buffers: shared hit=3676 read=62604, temp read=52888 written=75709
+              Worker 0:  Sort Method: external merge  Disk: 7568kB
+              Worker 1:  Sort Method: external merge  Disk: 7592kB
+              ->  Partial HashAggregate  (cost=344005.90..380388.88 rows=548552 width=43) (actual time=1339.958..1561.076 rows=134540 loops=3)
+                    Group Key: p.asin
+                    Planned Partitions: 16  Batches: 17  Memory Usage: 8337kB  Disk Usage: 66608kB
+                    Buffers: shared hit=3662 read=62604, temp read=50021 written=72833
+                    Worker 0:  Batches: 17  Memory Usage: 8337kB  Disk Usage: 63816kB
+                    Worker 1:  Batches: 17  Memory Usage: 8337kB  Disk Usage: 64728kB
+                    ->  Parallel Hash Join  (cost=11802.25..141318.56 rows=3163900 width=13) (actual time=693.933..947.237 rows=2531081 loops=3)
+                          Hash Cond: (r.pid = p.pid)
+                          Buffers: shared hit=3662 read=62604, temp read=28094 written=28176
+                          ->  Parallel Seq Scan on review r  (cost=0.00..94917.00 rows=3163900 width=6) (actual time=0.076..176.440 rows=2531081 loops=3)
+                                Buffers: shared hit=674 read=62604
+                          ->  Parallel Hash  (cost=6192.78..6192.78 rows=322678 width=15) (actual time=237.499..237.501 rows=182851 loops=3)
+                                Buckets: 262144  Batches: 8  Memory Usage: 5344kB
+                                Buffers: shared hit=2966, temp written=2164
+                                ->  Parallel Seq Scan on product p  (cost=0.00..6192.78 rows=322678 width=15) (actual time=200.241..211.482 rows=182851 loops=3)
+                                      Buffers: shared hit=2966
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.175 ms
+JIT:
+  Functions: 66
+  Options: Inlining true, Optimization true, Expressions true, Deforming true
+  Timing: Generation 3.412 ms, Inlining 282.531 ms, Optimization 404.405 ms, Emission 176.607 ms, Total 866.956 ms
+Execution Time: 2532.473 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=4446 read=125112, temp read=52888 written=75709
+Buffers: shared hit=770 read=62508
+Buffers: shared hit=770 read=62508
+Buffers: shared hit=770 read=62508
+Buffers: shared hit=770 read=62508
+Buffers: shared hit=3676 read=62604, temp read=52888 written=75709
+Buffers: shared hit=3676 read=62604, temp read=52888 written=75709
+Buffers: shared hit=3662 read=62604, temp read=50021 written=72833
+Buffers: shared hit=3662 read=62604, temp read=28094 written=28176
+Buffers: shared hit=674 read=62604
+Buffers: shared hit=2966, temp written=2164
+Buffers: shared hit=2966
+Buffers: shared hit=4
+
+
+====================================================================================================
+QUERY ID : 40
+TÍTULO   : Produtos com mais reviews que a média
+CATEGORIA: Subquery
+====================================================================================================
+
+SQL:
+----------------------------------------------------------------------------------------------------
+SELECT p.ASIN, COUNT(r.REV_ID) AS TOTAL_REVIEWS
+FROM PRODUCT p
+JOIN REVIEW r ON p.PID = r.PID
+GROUP BY p.ASIN
+HAVING COUNT(r.REV_ID) > (
+    SELECT AVG(contagem)
+    FROM (
+        SELECT COUNT(*) AS contagem
+        FROM REVIEW
+        GROUP BY PID
+    ) sub
+)
+ORDER BY TOTAL_REVIEWS DESC;
+
+PLANO DE EXECUÇÃO:
+----------------------------------------------------------------------------------------------------
+Sort  (cost=727715.06..728172.19 rows=182851 width=19) (actual time=3076.779..3126.824 rows=66115 loops=1)
+  Sort Key: (count(r.rev_id)) DESC
+  Sort Method: external merge  Disk: 2208kB
+  Buffers: shared hit=4830 read=124728, temp read=62518 written=89963
+  InitPlan 1 (returns $1)
+    ->  Aggregate  (cost=121330.53..121330.54 rows=1 width=32) (actual time=1068.663..1068.743 rows=1 loops=1)
+          Buffers: shared hit=962 read=62316, temp read=14651 written=25498
+          ->  Finalize HashAggregate  (cost=120440.36..120835.99 rows=39563 width=12) (actual time=867.106..1051.984 rows=402724 loops=1)
+                Group Key: review.pid
+                Batches: 21  Memory Usage: 10289kB  Disk Usage: 15184kB
+                Buffers: shared hit=962 read=62316, temp read=14651 written=25498
+                ->  Gather  (cost=111736.50..120044.73 rows=79126 width=12) (actual time=540.788..754.108 rows=404721 loops=1)
+                      Workers Planned: 2
+                      Workers Launched: 2
+                      Buffers: shared hit=962 read=62316, temp read=11942 written=21412
+                      ->  Partial HashAggregate  (cost=110736.50..111132.13 rows=39563 width=12) (actual time=528.629..687.771 rows=134907 loops=3)
+                            Group Key: review.pid
+                            Batches: 5  Memory Usage: 8241kB  Disk Usage: 38704kB
+                            Buffers: shared hit=962 read=62316, temp read=11942 written=21412
+                            Worker 0:  Batches: 5  Memory Usage: 8241kB  Disk Usage: 30512kB
+                            Worker 1:  Batches: 5  Memory Usage: 8241kB  Disk Usage: 30608kB
+                            ->  Parallel Seq Scan on review  (cost=0.00..94917.00 rows=3163900 width=4) (actual time=0.024..140.308 rows=2531081 loops=3)
+                                  Buffers: shared hit=962 read=62316
+  ->  Finalize GroupAggregate  (cost=444932.86..586651.06 rows=182851 width=19) (actual time=2729.604..3104.724 rows=66115 loops=1)
+        Group Key: p.asin
+        Filter: ((count(r.rev_id))::numeric > $1)
+        Rows Removed by Filter: 336609
+        Buffers: shared hit=4830 read=124728, temp read=62242 written=89686
+        ->  Gather Merge  (cost=444932.86..572937.26 rows=1097104 width=19) (actual time=1660.858..1922.752 rows=403771 loops=1)
+              Workers Planned: 2
+              Workers Launched: 2
+              Buffers: shared hit=3868 read=62412, temp read=47591 written=64188
+              ->  Sort  (cost=443932.84..445304.22 rows=548552 width=19) (actual time=1616.105..1666.801 rows=134590 loops=3)
+                    Sort Key: p.asin
+                    Sort Method: external merge  Disk: 4344kB
+                    Buffers: shared hit=3868 read=62412, temp read=47591 written=64188
+                    Worker 0:  Sort Method: external merge  Disk: 4344kB
+                    Worker 1:  Sort Method: external merge  Disk: 4808kB
+                    ->  Partial HashAggregate  (cost=344005.90..380388.88 rows=548552 width=19) (actual time=1241.173..1403.950 rows=134590 loops=3)
+                          Group Key: p.asin
+                          Planned Partitions: 8  Batches: 9  Memory Usage: 8273kB  Disk Usage: 48000kB
+                          Buffers: shared hit=3854 read=62412, temp read=45904 written=62494
+                          Worker 0:  Batches: 9  Memory Usage: 8273kB  Disk Usage: 47832kB
+                          Worker 1:  Batches: 9  Memory Usage: 8273kB  Disk Usage: 56360kB
+                          ->  Parallel Hash Join  (cost=11802.25..141318.56 rows=3163900 width=15) (actual time=558.812..889.729 rows=2531081 loops=3)
+                                Hash Cond: (r.pid = p.pid)
+                                Buffers: shared hit=3854 read=62412, temp read=28092 written=28164
+                                ->  Parallel Seq Scan on review r  (cost=0.00..94917.00 rows=3163900 width=8) (actual time=0.049..162.163 rows=2531081 loops=3)
+                                      Buffers: shared hit=866 read=62412
+                                ->  Parallel Hash  (cost=6192.78..6192.78 rows=322678 width=15) (actual time=116.928..116.929 rows=182851 loops=3)
+                                      Buckets: 262144  Batches: 8  Memory Usage: 5312kB
+                                      Buffers: shared hit=2966, temp written=2148
+                                      ->  Parallel Seq Scan on product p  (cost=0.00..6192.78 rows=322678 width=15) (actual time=80.576..91.665 rows=182851 loops=3)
+                                            Buffers: shared hit=2966
+Planning:
+  Buffers: shared hit=13
+Planning Time: 0.235 ms
+JIT:
+  Functions: 85
+  Options: Inlining true, Optimization true, Expressions true, Deforming true
+  Timing: Generation 4.064 ms, Inlining 187.732 ms, Optimization 160.585 ms, Emission 129.530 ms, Total 481.910 ms
+Execution Time: 3154.434 ms
+
+ÍNDICES DETECTADOS:
+----------------------------------------------------------------------------------------------------
+Nenhum índice detectado.
+
+CACHE / BUFFERS:
+----------------------------------------------------------------------------------------------------
+Buffers: shared hit=4830 read=124728, temp read=62518 written=89963
+Buffers: shared hit=962 read=62316, temp read=14651 written=25498
+Buffers: shared hit=962 read=62316, temp read=14651 written=25498
+Buffers: shared hit=962 read=62316, temp read=11942 written=21412
+Buffers: shared hit=962 read=62316, temp read=11942 written=21412
+Buffers: shared hit=962 read=62316
+Buffers: shared hit=4830 read=124728, temp read=62242 written=89686
+Buffers: shared hit=3868 read=62412, temp read=47591 written=64188
+Buffers: shared hit=3868 read=62412, temp read=47591 written=64188
+Buffers: shared hit=3854 read=62412, temp read=45904 written=62494
+Buffers: shared hit=3854 read=62412, temp read=28092 written=28164
+Buffers: shared hit=866 read=62412
+Buffers: shared hit=2966, temp written=2148
+Buffers: shared hit=2966
+Buffers: shared hit=13
+
+

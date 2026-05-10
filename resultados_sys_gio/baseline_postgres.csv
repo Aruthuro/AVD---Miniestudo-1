@@ -1,0 +1,1201 @@
+run;timestamp;sistema;query_id;carga;categoria;metrica;unidade;valor;tempo;num_tuplas;observacao
+1;2026-05-09 22:29:10;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;1.7695137429847207;0.5651;1;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;6.591914256883348;0.1517;1;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06629145775203862;181.0188;12;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;12.996363739521081;0.3847;5;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.423390454255026;0.3688;2;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0520913549566053;211.1675;11;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005992356389774056;166.8793;1;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;2.4134360836517645;0.4143;1;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;189.97874191505971;58.4855;11111;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.576819349967876;30.8023;449;cache quente
+1;2026-05-09 22:29:10;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.04945456104574;162.2320;38457;cache quente
+1;2026-05-09 22:29:11;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;829.0698319542083;193.4228;160361;cache quente
+1;2026-05-09 22:29:11;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;851.8450432846355;462.0101;393561;cache quente
+1;2026-05-09 22:29:11;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5050550114083293;29.6997;15;cache quente
+1;2026-05-09 22:29:11;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1502.7382049946457;215.5505;323916;cache quente
+1;2026-05-09 22:29:12;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;873.7686540422761;160.1797;139960;cache quente
+1;2026-05-09 22:29:12;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12492913403357901;8.0045;1;cache quente
+1;2026-05-09 22:29:12;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09974533437296598;120.3064;12;cache quente
+1;2026-05-09 22:29:12;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;2.1716516881813086;0.9210;2;cache quente
+1;2026-05-09 22:29:12;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;12.828835067939952;0.3897;5;cache quente
+1;2026-05-09 22:29:18;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1162.5179981071603;6531.7217;7593244;cache quente
+1;2026-05-09 22:29:19;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04325903037338147;554.7975;24;cache quente
+1;2026-05-09 22:29:21;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1237.8641916763545;2027.4429;2509699;cache quente
+1;2026-05-09 22:29:21;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17379903016620696;454.5480;79;cache quente
+1;2026-05-09 22:29:23;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;791.446923379551;1819.8681;1440329;cache quente
+1;2026-05-09 22:29:23;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.008923264715379901;112.0666;1;cache quente
+1;2026-05-09 22:29:23;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005472808035941544;182.7216;1;cache quente
+1;2026-05-09 22:29:23;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03548178750306098;28.1835;1;cache quente
+1;2026-05-09 22:29:23;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03698085080263388;27.0410;1;cache quente
+1;2026-05-09 22:29:24;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005874063255932485;170.2399;1;cache quente
+1;2026-05-09 22:29:24;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005594011275274042;178.7626;1;cache quente
+1;2026-05-09 22:29:24;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02221475185366062;540.1816;12;cache quente
+1;2026-05-09 22:29:25;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01705775795752684;293.1218;5;cache quente
+1;2026-05-09 22:29:25;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22128120882199384;40.6722;9;cache quente
+1;2026-05-09 22:29:25;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015303172793631655;326.7296;5;cache quente
+1;2026-05-09 22:29:25;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;66.35998913241605;378.0290;25086;cache quente
+1;2026-05-09 22:29:26;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09615617470562059;207.9950;20;cache quente
+1;2026-05-09 22:29:26;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.0628781503751717;477.1133;30;cache quente
+1;2026-05-09 22:29:28;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;111.49624555249952;2313.9793;258000;cache quente
+1;2026-05-09 22:29:31;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;25.567454869084656;2585.9046;66115;cache quente
+2;2026-05-09 22:29:31;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.4417154286589055;2.2639;1;cache quente
+2;2026-05-09 22:29:31;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.459945270888735;0.2242;1;cache quente
+2;2026-05-09 22:29:31;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.051057869704794055;235.0274;12;cache quente
+2;2026-05-09 22:29:31;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;9.316174153265571;0.5367;5;cache quente
+2;2026-05-09 22:29:31;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.712115121940394;0.3501;2;cache quente
+2;2026-05-09 22:29:31;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05085375456063047;216.3065;11;cache quente
+2;2026-05-09 22:29:32;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005086737211724425;196.5897;1;cache quente
+2;2026-05-09 22:29:32;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;2.255569554226872;0.4433;1;cache quente
+2;2026-05-09 22:29:32;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;181.38319220166883;61.2571;11111;cache quente
+2;2026-05-09 22:29:32;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.35717170522093;31.2736;449;cache quente
+2;2026-05-09 22:29:32;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;233.9554895403308;164.3774;38457;cache quente
+2;2026-05-09 22:29:32;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;742.8858537639128;215.8622;160361;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;788.1004156406965;499.3793;393561;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.531951413277981;28.1981;15;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1147.0465795762825;282.3913;323916;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;867.7939427453302;161.2825;139960;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.11200961490553417;8.9278;1;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.08905518195853042;134.7479;12;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;1.809034684318543;1.1056;2;cache quente
+2;2026-05-09 22:29:33;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;8.968143395127427;0.5575;5;cache quente
+2;2026-05-09 22:29:40;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1125.153061891156;6748.6320;7593244;cache quente
+2;2026-05-09 22:29:41;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04086020935347737;587.3685;24;cache quente
+2;2026-05-09 22:29:43;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1259.900068331561;1991.9826;2509699;cache quente
+2;2026-05-09 22:29:43;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17588245185473705;449.1636;79;cache quente
+2;2026-05-09 22:29:45;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;746.7965928109701;1928.6764;1440329;cache quente
+2;2026-05-09 22:29:45;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009168815347628227;109.0653;1;cache quente
+2;2026-05-09 22:29:45;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005507370682246225;181.5748;1;cache quente
+2;2026-05-09 22:29:45;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03768037359107174;26.5390;1;cache quente
+2;2026-05-09 22:29:45;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03608880111629772;27.7094;1;cache quente
+2;2026-05-09 22:29:45;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005889241587005602;169.8012;1;cache quente
+2;2026-05-09 22:29:46;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055362257310033166;180.6285;1;cache quente
+2;2026-05-09 22:29:46;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02212163400527706;542.4554;12;cache quente
+2;2026-05-09 22:29:46;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01726178893519595;289.6571;5;cache quente
+2;2026-05-09 22:29:47;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22054561268461362;40.8079;9;cache quente
+2;2026-05-09 22:29:47;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015523375205533402;322.0949;5;cache quente
+2;2026-05-09 22:29:47;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;86.32014358083539;290.6158;25086;cache quente
+2;2026-05-09 22:29:47;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09954529501231027;200.9136;20;cache quente
+2;2026-05-09 22:29:48;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.0743595617303763;403.4451;30;cache quente
+2;2026-05-09 22:29:50;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.61253363610669;2053.9352;258000;cache quente
+2;2026-05-09 22:29:52;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;24.480880213537453;2700.6790;66115;cache quente
+3;2026-05-09 22:29:52;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.4621704253103938;2.1637;1;cache quente
+3;2026-05-09 22:29:52;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.6672486329924014;0.2143;1;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06614948062724729;181.4073;12;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;11.915457440703243;0.4196;5;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.0987760329806955;0.3923;2;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05034123577862954;218.5087;11;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006039655374534735;165.5724;1;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;2.3183352477287595;0.4313;1;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;180.87274102024122;61.4299;11111;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.062373995084712;29.8094;449;cache quente
+3;2026-05-09 22:29:53;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;233.02565890720751;165.0333;38457;cache quente
+3;2026-05-09 22:29:54;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;814.7653998788456;196.8186;160361;cache quente
+3;2026-05-09 22:29:54;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;823.8684353475905;477.6988;393561;cache quente
+3;2026-05-09 22:29:54;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.4962706584260627;30.2254;15;cache quente
+3;2026-05-09 22:29:54;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1527.0432626762272;212.1197;323916;cache quente
+3;2026-05-09 22:29:54;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;813.8228899447407;171.9785;139960;cache quente
+3;2026-05-09 22:29:54;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1054007780429642;9.4876;1;cache quente
+3;2026-05-09 22:29:55;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.10090567043497788;118.9230;12;cache quente
+3;2026-05-09 22:29:55;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;2.181910219505348;0.9166;2;cache quente
+3;2026-05-09 22:29:55;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;9.606147838287153;0.5205;5;cache quente
+3;2026-05-09 22:30:01;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1146.0645805872398;6625.4940;7593244;cache quente
+3;2026-05-09 22:30:02;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.043182891534394766;555.7757;24;cache quente
+3;2026-05-09 22:30:04;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1229.8819578547477;2040.6015;2509699;cache quente
+3;2026-05-09 22:30:04;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17244988488464896;458.1041;79;cache quente
+3;2026-05-09 22:30:06;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;742.113188839333;1940.8481;1440329;cache quente
+3;2026-05-09 22:30:06;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.008344449949087175;119.8401;1;cache quente
+3;2026-05-09 22:30:06;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005429553476544377;184.1772;1;cache quente
+3;2026-05-09 22:30:06;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037382564077577486;26.7504;1;cache quente
+3;2026-05-09 22:30:07;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03512130142431646;28.4727;1;cache quente
+3;2026-05-09 22:30:07;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005908258849047971;169.2546;1;cache quente
+3;2026-05-09 22:30:07;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005366478997268847;186.3419;1;cache quente
+3;2026-05-09 22:30:07;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022083350337392404;543.3958;12;cache quente
+3;2026-05-09 22:30:08;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01714822230222066;291.5754;5;cache quente
+3;2026-05-09 22:30:08;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22279466699353456;40.3959;9;cache quente
+3;2026-05-09 22:30:08;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.01531790768747849;326.4153;5;cache quente
+3;2026-05-09 22:30:08;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;86.02794424084216;291.6029;25086;cache quente
+3;2026-05-09 22:30:09;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09824791158730872;203.5667;20;cache quente
+3;2026-05-09 22:30:09;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07393042944015525;405.7869;30;cache quente
+3;2026-05-09 22:30:11;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;122.9227731400194;2098.8788;258000;cache quente
+3;2026-05-09 22:30:14;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;25.96582105094905;2546.2318;66115;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.442789592815045;2.2584;1;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.340861872053891;0.2304;1;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06510862663773294;184.3074;12;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;10.511798418883151;0.4757;5;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.171159335645556;0.4795;2;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.04921832419500573;223.4940;11;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005983034817486593;167.1393;1;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;2.2229731054112953;0.4498;1;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;190.28423851371295;58.3916;11111;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.783248440206666;30.3722;449;cache quente
+4;2026-05-09 22:30:14;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.27996273434874;162.0744;38457;cache quente
+4;2026-05-09 22:30:15;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;830.1458342566971;193.1721;160361;cache quente
+4;2026-05-09 22:30:15;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;856.6700914566346;459.4079;393561;cache quente
+4;2026-05-09 22:30:15;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.4865163454494694;30.8314;15;cache quente
+4;2026-05-09 22:30:15;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1533.2844874606933;211.2563;323916;cache quente
+4;2026-05-09 22:30:16;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;832.884994141688;168.0424;139960;cache quente
+4;2026-05-09 22:30:16;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12745166014664794;7.8461;1;cache quente
+4;2026-05-09 22:30:16;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09784894824636159;122.6380;12;cache quente
+4;2026-05-09 22:30:16;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;2.5564397992346173;0.7823;2;cache quente
+4;2026-05-09 22:30:16;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;12.561488467288589;0.3980;5;cache quente
+4;2026-05-09 22:30:22;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1155.280995959206;6572.6382;7593244;cache quente
+4;2026-05-09 22:30:23;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04341108677404619;552.8542;24;cache quente
+4;2026-05-09 22:30:25;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1258.429483969876;1994.3104;2509699;cache quente
+4;2026-05-09 22:30:25;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.16563336501569126;476.9570;79;cache quente
+4;2026-05-09 22:30:27;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;721.4573801229543;1996.4159;1440329;cache quente
+4;2026-05-09 22:30:27;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.008717801074191131;114.7078;1;cache quente
+4;2026-05-09 22:30:28;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005425490100585707;184.3151;1;cache quente
+4;2026-05-09 22:30:28;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.036323797740791475;27.5302;1;cache quente
+4;2026-05-09 22:30:28;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03438608392813366;29.0815;1;cache quente
+4;2026-05-09 22:30:28;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.0058740479012499795;170.2404;1;cache quente
+4;2026-05-09 22:30:28;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005547029863220794;180.2767;1;cache quente
+4;2026-05-09 22:30:28;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022402572681571527;535.6528;12;cache quente
+4;2026-05-09 22:30:29;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01707485490382046;292.8283;5;cache quente
+4;2026-05-09 22:30:29;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22285886122335935;40.3843;9;cache quente
+4;2026-05-09 22:30:29;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015574000889815304;321.0479;5;cache quente
+4;2026-05-09 22:30:29;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;89.19900974656267;281.2363;25086;cache quente
+4;2026-05-09 22:30:30;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10274507721549546;194.6565;20;cache quente
+4;2026-05-09 22:30:30;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07466314415902515;401.8047;30;cache quente
+4;2026-05-09 22:30:32;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;120.37227174138616;2143.3508;258000;cache quente
+4;2026-05-09 22:30:35;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.094597109145816;2440.1544;66115;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.4261680851726473;2.3465;1;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.4620284571132545;0.2888;1;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06685821619834019;179.4843;12;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;9.140283272995966;0.5470;5;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.010033079727834;0.4987;2;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.050691753726909664;216.9978;11;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006024234834268228;165.9962;1;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;1.9125432226300896;0.5229;1;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;184.3562742004546;60.2692;11111;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.11568260539096;29.7042;449;cache quente
+5;2026-05-09 22:30:35;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.87735285092205;160.3194;38457;cache quente
+5;2026-05-09 22:30:36;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;845.7047736493935;189.6182;160361;cache quente
+5;2026-05-09 22:30:36;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;842.7209350452201;467.0123;393561;cache quente
+5;2026-05-09 22:30:36;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5150771140171448;29.1219;15;cache quente
+5;2026-05-09 22:30:36;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1578.000153558739;205.2699;323916;cache quente
+5;2026-05-09 22:30:36;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;877.1054172985775;159.5703;139960;cache quente
+5;2026-05-09 22:30:36;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12278804997264751;8.1441;1;cache quente
+5;2026-05-09 22:30:37;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09831151045852334;122.0610;12;cache quente
+5;2026-05-09 22:30:37;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;2.021807226274138;0.9892;2;cache quente
+5;2026-05-09 22:30:37;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;9.477361426770807;0.5276;5;cache quente
+5;2026-05-09 22:30:43;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1159.6649594195255;6547.7912;7593244;cache quente
+5;2026-05-09 22:30:44;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.039997022488078016;600.0447;24;cache quente
+5;2026-05-09 22:30:46;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1241.4854921732913;2021.5291;2509699;cache quente
+5;2026-05-09 22:30:46;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17542305735203526;450.3399;79;cache quente
+5;2026-05-09 22:30:48;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;778.1461815510362;1850.9748;1440329;cache quente
+5;2026-05-09 22:30:48;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.008838996642435962;113.1350;1;cache quente
+5;2026-05-09 22:30:48;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005505962100703725;181.6213;1;cache quente
+5;2026-05-09 22:30:48;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.036711945958349694;27.2391;1;cache quente
+5;2026-05-09 22:30:48;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03742437377081497;26.7206;1;cache quente
+5;2026-05-09 22:30:49;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005861498625587392;170.6048;1;cache quente
+5;2026-05-09 22:30:49;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055505841750011845;180.1612;1;cache quente
+5;2026-05-09 22:30:49;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.021026708156261783;570.7027;12;cache quente
+5;2026-05-09 22:30:50;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.015867638002832005;315.1068;5;cache quente
+5;2026-05-09 22:30:50;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22355675113157084;40.2582;9;cache quente
+5;2026-05-09 22:30:50;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015433220388975969;323.9765;5;cache quente
+5;2026-05-09 22:30:50;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;87.03860060947646;288.2170;25086;cache quente
+5;2026-05-09 22:30:51;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.0598250519854159;334.3081;20;cache quente
+5;2026-05-09 22:30:51;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.0747892657247704;401.1271;30;cache quente
+5;2026-05-09 22:30:53;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.11414987068373;2062.1169;258000;cache quente
+5;2026-05-09 22:30:56;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.10420407520091;2439.2895;66115;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.0509341942391466;19.6332;1;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;6.130681460587099;0.1631;1;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0667400484632614;179.8021;12;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;15.549245819858218;0.3216;5;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.523718857041093;0.2100;2;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.049177363302754344;223.6801;11;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0059494790586751365;168.0819;1;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.6888798421177467;0.2711;1;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;190.76325717526402;58.2450;11111;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.780206968118664;30.3785;449;cache quente
+6;2026-05-09 22:30:56;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.62862964927993;160.4858;38457;cache quente
+6;2026-05-09 22:30:57;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;848.7924705737139;188.9284;160361;cache quente
+6;2026-05-09 22:30:57;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;844.3037316153427;466.1368;393561;cache quente
+6;2026-05-09 22:30:57;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5130898981792745;29.2346;15;cache quente
+6;2026-05-09 22:30:57;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1605.1065058278632;201.8034;323916;cache quente
+6;2026-05-09 22:30:58;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;912.7405075308105;153.3404;139960;cache quente
+6;2026-05-09 22:30:58;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.13110438399914823;7.6275;1;cache quente
+6;2026-05-09 22:30:58;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09973668434734433;120.3168;12;cache quente
+6;2026-05-09 22:30:58;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.434059794387507;0.2690;2;cache quente
+6;2026-05-09 22:30:58;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;25.871882582322684;0.1933;5;cache quente
+6;2026-05-09 22:31:04;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1184.2160321767853;6412.0429;7593244;cache quente
+6;2026-05-09 22:31:05;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044381951369090906;540.7604;24;cache quente
+6;2026-05-09 22:31:07;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1289.2247327051737;1946.6730;2509699;cache quente
+6;2026-05-09 22:31:07;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17518284004669693;450.9574;79;cache quente
+6;2026-05-09 22:31:09;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;781.845681043968;1842.2165;1440329;cache quente
+6;2026-05-09 22:31:09;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009040398004053176;110.6146;1;cache quente
+6;2026-05-09 22:31:09;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005483436875952408;182.3674;1;cache quente
+6;2026-05-09 22:31:09;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03708336240024366;26.9663;1;cache quente
+6;2026-05-09 22:31:09;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03685707893624182;27.1318;1;cache quente
+6;2026-05-09 22:31:09;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005888181340103218;169.8317;1;cache quente
+6;2026-05-09 22:31:10;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0054775756025956315;182.5625;1;cache quente
+6;2026-05-09 22:31:10;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02225488431461293;539.2075;12;cache quente
+6;2026-05-09 22:31:10;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017228073712835433;290.2240;5;cache quente
+6;2026-05-09 22:31:10;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22676525410190745;39.6886;9;cache quente
+6;2026-05-09 22:31:11;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.01540628054965657;324.5430;5;cache quente
+6;2026-05-09 22:31:11;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.7723831478895;282.5879;25086;cache quente
+6;2026-05-09 22:31:11;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10231511165521605;195.4745;20;cache quente
+6;2026-05-09 22:31:12;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07476895048445058;401.2361;30;cache quente
+6;2026-05-09 22:31:14;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;126.00084417948533;2047.6053;258000;cache quente
+6;2026-05-09 22:31:16;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.97014926212121;2451.4139;66115;cache quente
+7;2026-05-09 22:31:16;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.054049636590368065;18.5015;1;cache quente
+7;2026-05-09 22:31:16;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;6.216199540800995;0.1609;1;cache quente
+7;2026-05-09 22:31:16;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06680842114487864;179.6181;12;cache quente
+7;2026-05-09 22:31:16;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.81689211898231;0.2523;5;cache quente
+7;2026-05-09 22:31:16;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.728635008261596;0.1864;2;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05088876417077047;216.1577;11;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006027270724024775;165.9126;1;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.842680660125225;0.2602;1;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;188.8344570030483;58.8399;11111;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.57023012941945;30.8163;449;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.55142098309753;161.8892;38457;cache quente
+7;2026-05-09 22:31:17;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;836.1927713090163;191.7752;160361;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;831.0344714529797;473.5796;393561;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5580388906484478;26.8798;15;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1607.4636543293498;201.5075;323916;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;909.426932046489;153.8991;139960;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1398839103422842;7.1488;1;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09901108062681412;121.1986;12;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.100659012820574;0.2817;2;cache quente
+7;2026-05-09 22:31:18;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;21.981500448429863;0.2275;5;cache quente
+7;2026-05-09 22:31:25;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1184.975778416672;6407.9318;7593244;cache quente
+7;2026-05-09 22:31:25;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044331189583787074;541.3796;24;cache quente
+7;2026-05-09 22:31:27;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1280.177086105521;1960.4311;2509699;cache quente
+7;2026-05-09 22:31:27;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17507637230427783;451.2316;79;cache quente
+7;2026-05-09 22:31:29;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;785.9707057066968;1832.5479;1440329;cache quente
+7;2026-05-09 22:31:29;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009117506348895426;109.6791;1;cache quente
+7;2026-05-09 22:31:30;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.0054976258502788325;181.8967;1;cache quente
+7;2026-05-09 22:31:30;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03832949482495728;26.0896;1;cache quente
+7;2026-05-09 22:31:30;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03772769845022403;26.5057;1;cache quente
+7;2026-05-09 22:31:30;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005908742497388129;169.2407;1;cache quente
+7;2026-05-09 22:31:30;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055146733823518024;181.3344;1;cache quente
+7;2026-05-09 22:31:31;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022331827077675045;537.3497;12;cache quente
+7;2026-05-09 22:31:31;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.0169933205444279;294.2333;5;cache quente
+7;2026-05-09 22:31:31;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2252676855720626;39.9525;9;cache quente
+7;2026-05-09 22:31:31;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015341322079112724;325.9172;5;cache quente
+7;2026-05-09 22:31:32;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;87.3185406555166;287.2929;25086;cache quente
+7;2026-05-09 22:31:32;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10313234805047612;193.9256;20;cache quente
+7;2026-05-09 22:31:32;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07494611299471542;400.2876;30;cache quente
+7;2026-05-09 22:31:34;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.38471444479599;2057.6671;258000;cache quente
+7;2026-05-09 22:31:37;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.625187227486876;2393.2869;66115;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05806022192915753;17.2235;1;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;6.039048717443747;0.1656;1;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06713002307406402;178.7576;12;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;13.206027324424078;0.3786;5;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.158627276358454;0.1969;2;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.051685993586274015;212.8236;11;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006013737288277246;166.2859;1;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.927822327788014;0.2546;1;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;192.87307347204447;57.6078;11111;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.307427348253622;29.3322;449;cache quente
+8;2026-05-09 22:31:37;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;238.73398394229505;161.0872;38457;cache quente
+8;2026-05-09 22:31:38;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;843.6785996762404;190.0736;160361;cache quente
+8;2026-05-09 22:31:38;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;745.7571196768237;527.7335;393561;cache quente
+8;2026-05-09 22:31:38;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.566213240656176;26.4918;15;cache quente
+8;2026-05-09 22:31:38;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1619.098544906217;200.0595;323916;cache quente
+8;2026-05-09 22:31:38;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;892.2566214096317;156.8607;139960;cache quente
+8;2026-05-09 22:31:38;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.11580694102865037;8.6351;1;cache quente
+8;2026-05-09 22:31:39;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09887247966590663;121.3685;12;cache quente
+8;2026-05-09 22:31:39;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.90395562004677;0.2897;2;cache quente
+8;2026-05-09 22:31:39;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;25.13307951216731;0.1989;5;cache quente
+8;2026-05-09 22:31:45;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1159.6870430584156;6547.6665;7593244;cache quente
+8;2026-05-09 22:31:46;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044284716851646866;541.9477;24;cache quente
+8;2026-05-09 22:31:48;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1257.5440622980277;1995.7146;2509699;cache quente
+8;2026-05-09 22:31:48;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17889466907965437;441.6006;79;cache quente
+8;2026-05-09 22:31:50;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;780.5209816035868;1845.3431;1440329;cache quente
+8;2026-05-09 22:31:50;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009119756871843007;109.6520;1;cache quente
+8;2026-05-09 22:31:50;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005541538572394517;180.4553;1;cache quente
+8;2026-05-09 22:31:50;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03663944075354052;27.2930;1;cache quente
+8;2026-05-09 22:31:50;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037148584605796155;26.9189;1;cache quente
+8;2026-05-09 22:31:51;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005849554284084511;170.9532;1;cache quente
+8;2026-05-09 22:31:51;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005581015839605197;179.1789;1;cache quente
+8;2026-05-09 22:31:51;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02236625331377193;536.5226;12;cache quente
+8;2026-05-09 22:31:52;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.016506650263852014;302.9082;5;cache quente
+8;2026-05-09 22:31:52;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2224581652119736;40.4570;9;cache quente
+8;2026-05-09 22:31:52;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015537883891860815;321.7941;5;cache quente
+8;2026-05-09 22:31:52;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.95920706457262;281.9944;25086;cache quente
+8;2026-05-09 22:31:52;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10128486741593722;197.4629;20;cache quente
+8;2026-05-09 22:31:53;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07514758252528822;399.2144;30;cache quente
+8;2026-05-09 22:31:55;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;118.96383073342129;2168.7264;258000;cache quente
+8;2026-05-09 22:31:57;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.962194734081457;2452.1372;66115;cache quente
+9;2026-05-09 22:31:57;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05559492603251538;17.9873;1;cache quente
+9;2026-05-09 22:31:57;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.924943789386816;0.2030;1;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06633835446463916;180.8908;12;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;20.188887617901123;0.2477;5;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.764494307086794;0.1858;2;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05086886001332598;216.2423;11;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006043276105542814;165.4732;1;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.709873120023542;0.2696;1;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;185.63790797162636;59.8531;11111;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.52333501137078;28.9242;449;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.837865120273;161.6942;38457;cache quente
+9;2026-05-09 22:31:58;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;835.2859592129632;191.9834;160361;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;861.4993424105903;456.8326;393561;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.535358654573335;28.0186;15;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1593.7921717603042;203.2360;323916;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;898.4585985027112;155.7779;139960;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12531486931594257;7.9799;1;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09890381929956876;121.3300;12;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.4644166276748;0.3094;2;cache quente
+9;2026-05-09 22:31:59;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;23.732337236179063;0.2107;5;cache quente
+9;2026-05-09 22:32:06;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1162.3486428154745;6532.6733;7593244;cache quente
+9;2026-05-09 22:32:06;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044995655219482;533.3848;24;cache quente
+9;2026-05-09 22:32:08;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1271.079576368845;1974.4625;2509699;cache quente
+9;2026-05-09 22:32:09;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17748685191372002;445.1034;79;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;779.956493609015;1846.6786;1440329;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009257281886825888;108.0231;1;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.0055046249914165605;181.6654;1;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037759634782514845;26.4833;1;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03791649899737064;26.3737;1;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.0059447700542603;168.2151;1;cache quente
+9;2026-05-09 22:32:11;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005505329395570621;181.6422;1;cache quente
+9;2026-05-09 22:32:12;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02191615888315006;547.5412;12;cache quente
+9;2026-05-09 22:32:12;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01720590340719539;290.5979;5;cache quente
+9;2026-05-09 22:32:12;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22851963081461377;39.3839;9;cache quente
+9;2026-05-09 22:32:13;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015480830796031094;322.9801;5;cache quente
+9;2026-05-09 22:32:13;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;91.3945329098789;274.4803;25086;cache quente
+9;2026-05-09 22:32:13;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10366329552186516;192.9323;20;cache quente
+9;2026-05-09 22:32:14;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07448871412245694;402.7456;30;cache quente
+9;2026-05-09 22:32:16;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;124.62007035698595;2070.2925;258000;cache quente
+9;2026-05-09 22:32:18;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.062398906843434;2443.0576;66115;cache quente
+10;2026-05-09 22:32:18;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.052450115362415166;19.0657;1;cache quente
+10;2026-05-09 22:32:18;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.593060087315723;0.1788;1;cache quente
+10;2026-05-09 22:32:18;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06720259391274674;178.5645;12;cache quente
+10;2026-05-09 22:32:18;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.70350154303218;0.2538;5;cache quente
+10;2026-05-09 22:32:18;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.176770793778246;0.1965;2;cache quente
+10;2026-05-09 22:32:18;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05204558328215791;211.3532;11;cache quente
+10;2026-05-09 22:32:19;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.00603732700585533;165.6362;1;cache quente
+10;2026-05-09 22:32:19;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;2.6706762637895065;0.3744;1;cache quente
+10;2026-05-09 22:32:19;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;188.60364150435097;58.9119;11111;cache quente
+10;2026-05-09 22:32:19;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.069941986827248;29.7944;449;cache quente
+10;2026-05-09 22:32:19;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.06952989274788;162.2182;38457;cache quente
+10;2026-05-09 22:32:19;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;833.3564068988593;192.4279;160361;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;867.8271610946298;453.5016;393561;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5423507411233273;27.6574;15;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1630.6861056921678;198.6379;323916;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;902.8766911662766;155.0156;139960;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1311731219553746;7.6235;1;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09831295300281738;122.0592;12;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.3587306495607;0.2718;2;cache quente
+10;2026-05-09 22:32:20;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;27.937174676400737;0.1790;5;cache quente
+10;2026-05-09 22:32:27;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1125.7469919466866;6745.0715;7593244;cache quente
+10;2026-05-09 22:32:27;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.040762914772340515;588.7705;24;cache quente
+10;2026-05-09 22:32:30;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1144.7481469496263;2192.3591;2509699;cache quente
+10;2026-05-09 22:32:30;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1690640769577505;467.2785;79;cache quente
+10;2026-05-09 22:32:32;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;708.0229127922197;2034.2972;1440329;cache quente
+10;2026-05-09 22:32:32;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009249181676306468;108.1177;1;cache quente
+10;2026-05-09 22:32:32;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005505464332946802;181.6377;1;cache quente
+10;2026-05-09 22:32:32;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03682053638103799;27.1588;1;cache quente
+10;2026-05-09 22:32:32;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03757747206790195;26.6117;1;cache quente
+10;2026-05-09 22:32:33;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005854098856085836;170.8205;1;cache quente
+10;2026-05-09 22:32:33;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005544788746344268;180.3495;1;cache quente
+10;2026-05-09 22:32:33;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022303711309569912;538.0271;12;cache quente
+10;2026-05-09 22:32:34;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01723985548527915;290.0256;5;cache quente
+10;2026-05-09 22:32:34;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.21568154880261026;41.7282;9;cache quente
+10;2026-05-09 22:32:34;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015500147042118738;322.5776;5;cache quente
+10;2026-05-09 22:32:34;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.59692111553946;283.1475;25086;cache quente
+10;2026-05-09 22:32:34;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.1031429758573403;193.9056;20;cache quente
+10;2026-05-09 22:32:35;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07472523735682703;401.4708;30;cache quente
+10;2026-05-09 22:32:37;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.15079791936128;2061.5130;258000;cache quente
+10;2026-05-09 22:32:39;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.188755107635238;2524.5568;66115;cache quente
+11;2026-05-09 22:32:39;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.055725912771361005;17.9450;1;cache quente
+11;2026-05-09 22:32:39;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.565417795445802;0.2190;1;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06657337370049325;180.2522;12;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.28320501878976;0.2593;5;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.7660540753175;0.2048;2;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05145324209645427;213.7863;11;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006042967590387668;165.4816;1;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.563372787893235;0.2806;1;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;183.62453852191132;60.5093;11111;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.344690274103737;29.2609;449;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;236.00665617569214;162.9488;38457;cache quente
+11;2026-05-09 22:32:40;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;830.1968179645719;193.1602;160361;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;839.7124877412256;468.6854;393561;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.569984935213312;26.3165;15;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1634.877169658574;198.1286;323916;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;919.3543494475202;152.2373;139960;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12874173368619965;7.7675;1;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09979698631397937;120.2441;12;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.603624101307015;0.3029;2;cache quente
+11;2026-05-09 22:32:41;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;33.93649764084729;0.1473;5;cache quente
+11;2026-05-09 22:32:48;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1173.4212043169998;6471.0302;7593244;cache quente
+11;2026-05-09 22:32:48;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044664316535824346;537.3417;24;cache quente
+11;2026-05-09 22:32:50;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1276.1193604515252;1966.6648;2509699;cache quente
+11;2026-05-09 22:32:51;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17604375775571354;448.7521;79;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;787.0588138596466;1830.0144;1440329;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009386060768541982;106.5410;1;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.00544324700576546;183.7139;1;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03605663054805154;27.7341;1;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037953055099996684;26.3483;1;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005828383141729218;171.5742;1;cache quente
+11;2026-05-09 22:32:53;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005577170375179659;179.3024;1;cache quente
+11;2026-05-09 22:32:54;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022277456742137696;538.6611;12;cache quente
+11;2026-05-09 22:32:54;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01712459518114371;291.9777;5;cache quente
+11;2026-05-09 22:32:54;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2263627034701114;39.7592;9;cache quente
+11;2026-05-09 22:32:55;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015455094037236385;323.5179;5;cache quente
+11;2026-05-09 22:32:55;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;85.21492746075143;294.3850;25086;cache quente
+11;2026-05-09 22:32:55;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10304335562467785;194.0931;20;cache quente
+11;2026-05-09 22:32:55;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07480496568851722;401.0429;30;cache quente
+11;2026-05-09 22:32:58;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.58218996725998;2054.4314;258000;cache quente
+11;2026-05-09 22:33:00;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.008235781089436;2447.9570;66115;cache quente
+12;2026-05-09 22:33:00;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.054130149326759115;18.4740;1;cache quente
+12;2026-05-09 22:33:00;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.2683430686492105;0.1898;1;cache quente
+12;2026-05-09 22:33:00;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06643702561232677;180.6222;12;cache quente
+12;2026-05-09 22:33:00;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;17.67996420963462;0.2828;5;cache quente
+12;2026-05-09 22:33:00;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.138804933369798;0.2188;2;cache quente
+12;2026-05-09 22:33:00;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0515895645319326;213.2214;11;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006052594845983727;165.2184;1;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.6428412276606243;0.2745;1;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;185.69989782665462;59.8331;11111;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.937875403178744;30.0578;449;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;240.9786360642738;159.5868;38457;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;837.5673545994347;191.4604;160361;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;854.7625654448059;460.4331;393561;cache quente
+12;2026-05-09 22:33:01;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5555689509380591;26.9993;15;cache quente
+12;2026-05-09 22:33:02;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1635.0223116214468;198.1111;323916;cache quente
+12;2026-05-09 22:33:02;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;927.8829126627486;150.8380;139960;cache quente
+12;2026-05-09 22:33:02;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12653506001889278;7.9029;1;cache quente
+12;2026-05-09 22:33:02;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09595382624833186;125.0602;12;cache quente
+12;2026-05-09 22:33:02;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.30477283158018;0.3172;2;cache quente
+12;2026-05-09 22:33:02;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;23.452597709293077;0.2132;5;cache quente
+12;2026-05-09 22:33:08;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1175.7958742798123;6457.9611;7593244;cache quente
+12;2026-05-09 22:33:09;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04481364698637076;535.5511;24;cache quente
+12;2026-05-09 22:33:11;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1264.9580288079865;1984.0176;2509699;cache quente
+12;2026-05-09 22:33:11;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17578428606740412;449.4145;79;cache quente
+12;2026-05-09 22:33:13;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;806.1577209747013;1786.6591;1440329;cache quente
+12;2026-05-09 22:33:13;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.00925391246866257;108.0624;1;cache quente
+12;2026-05-09 22:33:13;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005536879169991611;180.6072;1;cache quente
+12;2026-05-09 22:33:13;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03554266794991709;28.1352;1;cache quente
+12;2026-05-09 22:33:14;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03732680920776474;26.7904;1;cache quente
+12;2026-05-09 22:33:14;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005892181585412434;169.7164;1;cache quente
+12;2026-05-09 22:33:14;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005551725975018134;180.1242;1;cache quente
+12;2026-05-09 22:33:14;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02205197938946845;544.1688;12;cache quente
+12;2026-05-09 22:33:15;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017234398428113126;290.1175;5;cache quente
+12;2026-05-09 22:33:15;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2277484742738348;39.5173;9;cache quente
+12;2026-05-09 22:33:15;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015561635548510274;321.3030;5;cache quente
+12;2026-05-09 22:33:15;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;89.19716989452017;281.2421;25086;cache quente
+12;2026-05-09 22:33:16;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.1007401859961511;198.5305;20;cache quente
+12;2026-05-09 22:33:16;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07457697756918333;402.2689;30;cache quente
+12;2026-05-09 22:33:18;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;123.44405101373518;2090.0157;258000;cache quente
+12;2026-05-09 22:33:20;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.914583151007417;2456.4750;66115;cache quente
+13;2026-05-09 22:33:20;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05345540551226437;18.7072;1;cache quente
+13;2026-05-09 22:33:20;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.005706434862039;0.1998;1;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06593448363933627;181.9988;12;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;17.651191293930534;0.2833;5;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.96343415541836;0.2007;2;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.04990295282166729;220.4278;11;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0060013416837690564;166.6294;1;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.0089158650378165;0.2494;1;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;182.00404721086008;61.0481;11111;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.031449203197255;29.8707;449;cache quente
+13;2026-05-09 22:33:21;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;233.60912354760723;164.6211;38457;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;841.399753674759;190.5884;160361;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;862.0282914704934;456.5523;393561;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5950865844454015;25.2064;15;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1632.6927020375686;198.3937;323916;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;930.576901927458;150.4013;139960;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.12637904816131904;7.9127;1;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.0986641555809759;121.6247;12;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.45250788327914;0.3100;2;cache quente
+13;2026-05-09 22:33:22;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;24.427063080064965;0.2047;5;cache quente
+13;2026-05-09 22:33:29;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1164.0785427199364;6522.9654;7593244;cache quente
+13;2026-05-09 22:33:30;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.045029853047985915;532.9798;24;cache quente
+13;2026-05-09 22:33:31;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1279.3961017174017;1961.6278;2509699;cache quente
+13;2026-05-09 22:33:32;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17814901647264925;443.4490;79;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;791.0366381411393;1820.8120;1440329;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.00918979496077312;108.8164;1;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005499123368442115;181.8472;1;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03857714526101998;25.9221;1;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037128490009882636;26.9335;1;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005910886388994771;169.1794;1;cache quente
+13;2026-05-09 22:33:34;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005562693758716824;179.7690;1;cache quente
+13;2026-05-09 22:33:35;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022399911636630337;535.7164;12;cache quente
+13;2026-05-09 22:33:35;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.016895896847507055;295.9298;5;cache quente
+13;2026-05-09 22:33:35;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22680997761389415;39.6808;9;cache quente
+13;2026-05-09 22:33:36;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015611036123441252;320.2862;5;cache quente
+13;2026-05-09 22:33:36;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.056056921884;284.8867;25086;cache quente
+13;2026-05-09 22:33:36;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10058402757943585;198.8387;20;cache quente
+13;2026-05-09 22:33:37;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.0744945385400499;402.7141;30;cache quente
+13;2026-05-09 22:33:39;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;124.59372094340699;2070.7304;258000;cache quente
+13;2026-05-09 22:33:41;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.150698742570352;2435.1123;66115;cache quente
+14;2026-05-09 22:33:41;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05290476243875536;18.9019;1;cache quente
+14;2026-05-09 22:33:41;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.310082080183314;0.1883;1;cache quente
+14;2026-05-09 22:33:41;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06637823149450313;180.7822;12;cache quente
+14;2026-05-09 22:33:41;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;20.949077482423615;0.2387;5;cache quente
+14;2026-05-09 22:33:41;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.642826791011514;0.1879;2;cache quente
+14;2026-05-09 22:33:41;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.050398590771039156;218.2601;11;cache quente
+14;2026-05-09 22:33:42;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005954111082360501;167.9512;1;cache quente
+14;2026-05-09 22:33:42;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.8200452975659784;0.2618;1;cache quente
+14;2026-05-09 22:33:42;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;185.6193686992037;59.8591;11111;cache quente
+14;2026-05-09 22:33:42;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;12.5147253565596;35.8777;449;cache quente
+14;2026-05-09 22:33:42;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;178.36969017980115;215.6028;38457;cache quente
+14;2026-05-09 22:33:42;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;847.4139411322736;189.2357;160361;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;881.5819232857764;446.4259;393561;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6080098734949028;24.6707;15;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1639.1140101357325;197.6165;323916;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;946.8226425543282;147.8207;139960;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1354384623722992;7.3834;1;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09707899811431717;123.6107;12;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.186024554023497;0.2783;2;cache quente
+14;2026-05-09 22:33:43;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;22.591518285198656;0.2213;5;cache quente
+14;2026-05-09 22:33:50;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1114.542905579685;6812.8772;7593244;cache quente
+14;2026-05-09 22:33:50;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04057990098806054;591.4258;24;cache quente
+14;2026-05-09 22:33:53;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1127.870543635415;2225.1658;2509699;cache quente
+14;2026-05-09 22:33:53;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1520488321253541;519.5699;79;cache quente
+14;2026-05-09 22:33:55;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;699.0259642749751;2060.4800;1440329;cache quente
+14;2026-05-09 22:33:55;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009136122181151164;109.4556;1;cache quente
+14;2026-05-09 22:33:56;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005514411277110694;181.3430;1;cache quente
+14;2026-05-09 22:33:56;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03741821781373006;26.7249;1;cache quente
+14;2026-05-09 22:33:56;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03730382431866409;26.8069;1;cache quente
+14;2026-05-09 22:33:56;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005896834873670297;169.5825;1;cache quente
+14;2026-05-09 22:33:56;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055809664397711446;179.1804;1;cache quente
+14;2026-05-09 22:33:57;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02199301210892601;545.6279;12;cache quente
+14;2026-05-09 22:33:57;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.016812569620395883;297.3965;5;cache quente
+14;2026-05-09 22:33:57;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2258693088735407;39.8461;9;cache quente
+14;2026-05-09 22:33:57;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015418411213722328;324.2876;5;cache quente
+14;2026-05-09 22:33:57;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;85.12825329979931;294.6848;25086;cache quente
+14;2026-05-09 22:33:58;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09152034698708975;218.5306;20;cache quente
+14;2026-05-09 22:33:58;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.06178733267538004;485.5364;30;cache quente
+14;2026-05-09 22:34:00;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;123.96893052424984;2081.1666;258000;cache quente
+14;2026-05-09 22:34:03;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.942515492152573;2453.9283;66115;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.055706377467335116;17.9513;1;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.926136572875844;0.1687;1;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06686013873670614;179.4791;12;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.720598639515128;0.2535;5;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;11.694675386856195;0.1710;2;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.04740532083243238;232.0415;11;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005847103881762927;171.0248;1;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.5971610967519907;0.2780;1;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;184.48083646930695;60.2285;11111;cache quente
+15;2026-05-09 22:34:03;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.907626499424024;30.1188;449;cache quente
+15;2026-05-09 22:34:04;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.39570019081125;160.6420;38457;cache quente
+15;2026-05-09 22:34:04;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;822.568352610831;194.9516;160361;cache quente
+15;2026-05-09 22:34:04;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;906.9375715608631;433.9450;393561;cache quente
+15;2026-05-09 22:34:04;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5768435169482927;26.0036;15;cache quente
+15;2026-05-09 22:34:04;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1634.8977246119457;198.1262;323916;cache quente
+15;2026-05-09 22:34:05;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;923.2133886411129;151.6009;139960;cache quente
+15;2026-05-09 22:34:05;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.16314296889752355;6.1296;1;cache quente
+15;2026-05-09 22:34:05;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09933034297506903;120.8090;12;cache quente
+15;2026-05-09 22:34:05;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;5.965270285768093;0.3353;2;cache quente
+15;2026-05-09 22:34:05;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;24.899902043213398;0.2008;5;cache quente
+15;2026-05-09 22:34:11;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1193.7191073955014;6360.9973;7593244;cache quente
+15;2026-05-09 22:34:12;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04498754904867378;533.4809;24;cache quente
+15;2026-05-09 22:34:14;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1283.0404578860737;1956.0560;2509699;cache quente
+15;2026-05-09 22:34:14;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17489734687825928;451.6935;79;cache quente
+15;2026-05-09 22:34:16;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;790.2567022726555;1822.6090;1440329;cache quente
+15;2026-05-09 22:34:16;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009504703621006827;105.2111;1;cache quente
+15;2026-05-09 22:34:16;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005540709931165562;180.4823;1;cache quente
+15;2026-05-09 22:34:16;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03617968960882048;27.6398;1;cache quente
+15;2026-05-09 22:34:16;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037702230043812034;26.5236;1;cache quente
+15;2026-05-09 22:34:16;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005865518729864768;170.4879;1;cache quente
+15;2026-05-09 22:34:17;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055161274106533525;181.2866;1;cache quente
+15;2026-05-09 22:34:17;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02152515699901627;557.4872;12;cache quente
+15;2026-05-09 22:34:17;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01656513267391438;301.8388;5;cache quente
+15;2026-05-09 22:34:17;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2250540073094345;39.9904;9;cache quente
+15;2026-05-09 22:34:18;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.014858731855157108;336.5025;5;cache quente
+15;2026-05-09 22:34:18;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;85.59221583696123;293.0874;25086;cache quente
+15;2026-05-09 22:34:18;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10298949618803167;194.1946;20;cache quente
+15;2026-05-09 22:34:19;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07459841936340111;402.1533;30;cache quente
+15;2026-05-09 22:34:21;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;122.61252916801986;2104.1895;258000;cache quente
+15;2026-05-09 22:34:23;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.238008389862188;2519.8178;66115;cache quente
+16;2026-05-09 22:34:23;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05138955560612581;19.4592;1;cache quente
+16;2026-05-09 22:34:23;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.525071121990446;0.2210;1;cache quente
+16;2026-05-09 22:34:23;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0651862368886061;184.0879;12;cache quente
+16;2026-05-09 22:34:23;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;17.291584491635497;0.2892;5;cache quente
+16;2026-05-09 22:34:23;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.67328508656509;0.2068;2;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05197526882557586;211.6391;11;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006000642620889185;166.6488;1;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.8404669900351083;0.2604;1;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;187.73330860398622;59.1850;11111;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.442728757453578;31.0883;449;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;241.096041152243;159.5090;38457;cache quente
+16;2026-05-09 22:34:24;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;847.4550922472662;189.2265;160361;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;886.8382208033339;443.7799;393561;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.5976689714702161;25.0975;15;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1659.3567986293172;195.2058;323916;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;947.8998971641574;147.6527;139960;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.15832835652010288;6.3160;1;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.10003201607885413;119.9616;12;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;8.807391284666231;0.2271;2;cache quente
+16;2026-05-09 22:34:25;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;29.958059154626135;0.1669;5;cache quente
+16;2026-05-09 22:34:32;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1180.534335312793;6432.0399;7593244;cache quente
+16;2026-05-09 22:34:32;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04490466915523923;534.4656;24;cache quente
+16;2026-05-09 22:34:34;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1299.3990656193753;1931.4305;2509699;cache quente
+16;2026-05-09 22:34:35;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.178956678127714;441.4476;79;cache quente
+16;2026-05-09 22:34:36;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;791.7934999857143;1819.0715;1440329;cache quente
+16;2026-05-09 22:34:37;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009541377471282598;104.8067;1;cache quente
+16;2026-05-09 22:34:37;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005440789062452884;183.7969;1;cache quente
+16;2026-05-09 22:34:37;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03705151458112668;26.9894;1;cache quente
+16;2026-05-09 22:34:37;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.0383618345839349;26.0676;1;cache quente
+16;2026-05-09 22:34:37;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005912496378134438;169.1333;1;cache quente
+16;2026-05-09 22:34:37;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005543843078243825;180.3803;1;cache quente
+16;2026-05-09 22:34:38;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022221012082251565;540.0294;12;cache quente
+16;2026-05-09 22:34:38;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017154236734223692;291.4732;5;cache quente
+16;2026-05-09 22:34:38;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.23002009662259862;39.1270;9;cache quente
+16;2026-05-09 22:34:38;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.01502190664167973;332.8472;5;cache quente
+16;2026-05-09 22:34:39;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;90.66988356441439;276.6740;25086;cache quente
+16;2026-05-09 22:34:39;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10120061321033127;197.6273;20;cache quente
+16;2026-05-09 22:34:39;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07456038581421619;402.3584;30;cache quente
+16;2026-05-09 22:34:41;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.39843176638993;2057.4420;258000;cache quente
+16;2026-05-09 22:34:44;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.0447191513902;2444.6547;66115;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05020335370343954;19.9190;1;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.1970189013129495;0.1924;1;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06737567890139758;178.1058;12;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;18.16451245662337;0.2753;5;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.245476741653656;0.2163;2;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05116919470109621;214.9731;11;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005985174937144718;167.0795;1;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.6465740640645112;0.2742;1;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;189.1341438584593;58.7467;11111;cache quente
+17;2026-05-09 22:34:44;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.250956179600337;29.4408;449;cache quente
+17;2026-05-09 22:34:45;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.46171382998602;160.5977;38457;cache quente
+17;2026-05-09 22:34:45;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;839.2704262718413;191.0719;160361;cache quente
+17;2026-05-09 22:34:45;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;886.3364154546787;444.0312;393561;cache quente
+17;2026-05-09 22:34:45;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6222368534016841;24.1066;15;cache quente
+17;2026-05-09 22:34:45;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1645.3018678466763;196.8733;323916;cache quente
+17;2026-05-09 22:34:46;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;973.8435475576619;143.7192;139960;cache quente
+17;2026-05-09 22:34:46;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.13025957222963397;7.6770;1;cache quente
+17;2026-05-09 22:34:46;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09850469462807399;121.8216;12;cache quente
+17;2026-05-09 22:34:46;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.67004604676891;0.2998;2;cache quente
+17;2026-05-09 22:34:46;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;25.674996284719047;0.1947;5;cache quente
+17;2026-05-09 22:34:52;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1157.126597932281;6562.1549;7593244;cache quente
+17;2026-05-09 22:34:53;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044535847343721846;538.8917;24;cache quente
+17;2026-05-09 22:34:55;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1273.5997397550768;1970.5555;2509699;cache quente
+17;2026-05-09 22:34:55;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17587068103375617;449.1937;79;cache quente
+17;2026-05-09 22:34:57;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;787.9387368493904;1827.9708;1440329;cache quente
+17;2026-05-09 22:34:57;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009668910775497887;103.4243;1;cache quente
+17;2026-05-09 22:34:57;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005492261573835825;182.0744;1;cache quente
+17;2026-05-09 22:34:57;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03746042867562342;26.6948;1;cache quente
+17;2026-05-09 22:34:57;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.038421380728150614;26.0272;1;cache quente
+17;2026-05-09 22:34:57;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005776394431303644;173.1184;1;cache quente
+17;2026-05-09 22:34:58;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005592862277418256;178.7993;1;cache quente
+17;2026-05-09 22:34:58;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022243859401227743;539.4747;12;cache quente
+17;2026-05-09 22:34:59;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01707148396095149;292.8861;5;cache quente
+17;2026-05-09 22:34:59;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22080550139082158;40.7599;9;cache quente
+17;2026-05-09 22:34:59;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015510614020119372;322.3599;5;cache quente
+17;2026-05-09 22:34:59;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;90.17070483389762;278.2057;25086;cache quente
+17;2026-05-09 22:34:59;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.08649586656396445;231.2249;20;cache quente
+17;2026-05-09 22:35:00;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07485280532765239;400.7866;30;cache quente
+17;2026-05-09 22:35:02;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;117.09932286960787;2203.2578;258000;cache quente
+17;2026-05-09 22:35:05;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;24.34744348572773;2715.4802;66115;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05456268445071509;18.3275;1;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.788859262389499;0.2088;1;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06697306322167636;179.1765;12;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;15.78536951472322;0.3167;5;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.664870556061283;0.2069;2;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.047969622495801376;229.3118;11;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005956985666967433;167.8701;1;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.628407518041591;0.2756;1;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;189.00840991686894;58.7857;11111;cache quente
+18;2026-05-09 22:35:05;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.602622316470095;30.7479;449;cache quente
+18;2026-05-09 22:35:06;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.9764748417124;161.6000;38457;cache quente
+18;2026-05-09 22:35:06;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;823.9039536991734;194.6356;160361;cache quente
+18;2026-05-09 22:35:06;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;751.6853602088456;523.5715;393561;cache quente
+18;2026-05-09 22:35:06;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6010518408238803;24.9562;15;cache quente
+18;2026-05-09 22:35:06;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1631.5796894052837;198.5291;323916;cache quente
+18;2026-05-09 22:35:07;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;965.9686537734866;144.8908;139960;cache quente
+18;2026-05-09 22:35:07;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1636582728846151;6.1103;1;cache quente
+18;2026-05-09 22:35:07;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09446496919350626;127.0312;12;cache quente
+18;2026-05-09 22:35:07;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.055494963989186;0.2835;2;cache quente
+18;2026-05-09 22:35:07;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;24.11544533955118;0.2073;5;cache quente
+18;2026-05-09 22:35:13;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1172.9173678749867;6473.8098;7593244;cache quente
+18;2026-05-09 22:35:14;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.043729004885140914;548.8348;24;cache quente
+18;2026-05-09 22:35:16;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1292.4747432339248;1941.7780;2509699;cache quente
+18;2026-05-09 22:35:16;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1767217818662319;447.0303;79;cache quente
+18;2026-05-09 22:35:18;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;788.5866587121824;1826.4689;1440329;cache quente
+18;2026-05-09 22:35:18;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009227343075423104;108.3736;1;cache quente
+18;2026-05-09 22:35:18;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005499572383443401;181.8323;1;cache quente
+18;2026-05-09 22:35:18;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03735556936544961;26.7698;1;cache quente
+18;2026-05-09 22:35:18;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03686626295006317;27.1251;1;cache quente
+18;2026-05-09 22:35:19;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005887477470905859;169.8520;1;cache quente
+18;2026-05-09 22:35:19;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005537857485994202;180.5753;1;cache quente
+18;2026-05-09 22:35:19;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022287161107727188;538.4266;12;cache quente
+18;2026-05-09 22:35:20;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017095949491511796;292.4669;5;cache quente
+18;2026-05-09 22:35:20;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2180509770502016;41.2748;9;cache quente
+18;2026-05-09 22:35:20;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015261704705663149;327.6174;5;cache quente
+18;2026-05-09 22:35:20;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;85.99947740053733;291.6994;25086;cache quente
+18;2026-05-09 22:35:20;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09982034932386996;200.3599;20;cache quente
+18;2026-05-09 22:35:21;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07430675255068268;403.7318;30;cache quente
+18;2026-05-09 22:35:23;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;120.73243454502939;2136.9568;258000;cache quente
+18;2026-05-09 22:35:26;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;25.229387304671615;2620.5551;66115;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05656420852113555;17.6790;1;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.083470619228322;0.1967;1;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06616573981959722;181.3627;12;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;17.923202648230735;0.2790;5;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.21904519694155;0.1957;2;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.04943308831145842;222.5230;11;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006069977701491094;164.7453;1;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.8438771421059252;0.2602;1;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;186.42750701396915;59.5996;11111;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.12451518442957;29.6869;449;cache quente
+19;2026-05-09 22:35:26;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.04187377007656;160.8798;38457;cache quente
+19;2026-05-09 22:35:27;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;840.7806216554438;190.7287;160361;cache quente
+19;2026-05-09 22:35:27;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;901.9338580681774;436.3524;393561;cache quente
+19;2026-05-09 22:35:27;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6130095336419977;24.4694;15;cache quente
+19;2026-05-09 22:35:27;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1662.4609098668593;194.8413;323916;cache quente
+19;2026-05-09 22:35:27;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;989.5001492207359;141.4452;139960;cache quente
+19;2026-05-09 22:35:27;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1517772893387019;6.5886;1;cache quente
+19;2026-05-09 22:35:28;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.10072196074496542;119.1399;12;cache quente
+19;2026-05-09 22:35:28;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.067737065631566;0.2830;2;cache quente
+19;2026-05-09 22:35:28;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;24.01917743757186;0.2082;5;cache quente
+19;2026-05-09 22:35:34;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1162.1362030160876;6533.8675;7593244;cache quente
+19;2026-05-09 22:35:35;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044052082255729624;544.8097;24;cache quente
+19;2026-05-09 22:35:37;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1292.2833629380978;1942.0655;2509699;cache quente
+19;2026-05-09 22:35:37;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1757584573674388;449.4805;79;cache quente
+19;2026-05-09 22:35:39;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;728.5469318695618;1976.9886;1440329;cache quente
+19;2026-05-09 22:35:39;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009278804200892821;107.7725;1;cache quente
+19;2026-05-09 22:35:39;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.0054771692307259215;182.5761;1;cache quente
+19;2026-05-09 22:35:39;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03812718213499195;26.2280;1;cache quente
+19;2026-05-09 22:35:39;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037952679156285425;26.3486;1;cache quente
+19;2026-05-09 22:35:39;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005834253399899988;171.4015;1;cache quente
+19;2026-05-09 22:35:40;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005185161871179165;192.8580;1;cache quente
+19;2026-05-09 22:35:40;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.01964676630263811;610.7875;12;cache quente
+19;2026-05-09 22:35:41;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01692875952751165;295.3554;5;cache quente
+19;2026-05-09 22:35:41;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22222627166548695;40.4993;9;cache quente
+19;2026-05-09 22:35:41;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015450348058706915;323.6173;5;cache quente
+19;2026-05-09 22:35:41;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;85.29363280075982;294.1134;25086;cache quente
+19;2026-05-09 22:35:41;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10067920254096414;198.6508;20;cache quente
+19;2026-05-09 22:35:42;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07513238852799324;399.2952;30;cache quente
+19;2026-05-09 22:35:44;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.37341786110805;2057.8525;258000;cache quente
+19;2026-05-09 22:35:46;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.66958583066998;2389.4467;66115;cache quente
+20;2026-05-09 22:35:46;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.055519779224854016;18.0116;1;cache quente
+20;2026-05-09 22:35:46;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.772605471794598;0.1732;1;cache quente
+20;2026-05-09 22:35:46;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06706152417695009;178.9402;12;cache quente
+20;2026-05-09 22:35:46;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;21.158736853202633;0.2363;5;cache quente
+20;2026-05-09 22:35:46;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.410657436519859;0.2125;2;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.051313962107142404;214.3666;11;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006014053423504759;166.2772;1;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.32434296315587;0.2312;1;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;186.9163532331608;59.4437;11111;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.272679749592973;29.3989;449;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.79457317628246;160.3748;38457;cache quente
+20;2026-05-09 22:35:47;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;851.2270465357753;188.3880;160361;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;889.0654183786909;442.6682;393561;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6667190855189659;22.4982;15;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1640.3080313118662;197.4727;323916;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;962.2635452803218;145.4487;139960;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1950415749552268;5.1271;1;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09943154323728623;120.6860;12;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.449823495369175;0.3101;2;cache quente
+20;2026-05-09 22:35:48;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;22.806369243505113;0.2192;5;cache quente
+20;2026-05-09 22:35:55;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1100.0092408957407;6902.8911;7593244;cache quente
+20;2026-05-09 22:35:56;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04002962345571084;599.5560;24;cache quente
+20;2026-05-09 22:35:58;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1191.8239678824768;2105.7632;2509699;cache quente
+20;2026-05-09 22:35:58;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1693608864446879;466.4595;79;cache quente
+20;2026-05-09 22:36:00;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;763.0549475784039;1887.5823;1440329;cache quente
+20;2026-05-09 22:36:00;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.00915953104860061;109.1759;1;cache quente
+20;2026-05-09 22:36:00;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005453789836902241;183.3587;1;cache quente
+20;2026-05-09 22:36:01;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03660517862534869;27.3185;1;cache quente
+20;2026-05-09 22:36:01;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03724752278367136;26.8474;1;cache quente
+20;2026-05-09 22:36:01;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005822777365806787;171.7394;1;cache quente
+20;2026-05-09 22:36:01;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005564597284106925;179.7075;1;cache quente
+20;2026-05-09 22:36:01;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022159736157246843;541.5227;12;cache quente
+20;2026-05-09 22:36:02;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.016888134282092033;296.0659;5;cache quente
+20;2026-05-09 22:36:02;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22352586924694037;40.2638;9;cache quente
+20;2026-05-09 22:36:02;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015236070587671176;328.1686;5;cache quente
+20;2026-05-09 22:36:02;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;83.35069806333773;300.9693;25086;cache quente
+20;2026-05-09 22:36:03;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09815236178245136;203.7648;20;cache quente
+20;2026-05-09 22:36:03;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.0736948179770021;407.0843;30;cache quente
+20;2026-05-09 22:36:05;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;124.89299737974028;2065.7683;258000;cache quente
+20;2026-05-09 22:36:08;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.711078650330244;2475.1902;66115;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05175857790928882;19.3205;1;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.611631454961677;0.2168;1;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06655272507320072;180.3082;12;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;18.699488238022134;0.2674;5;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.624824608365257;0.2078;2;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05004763397204047;219.7906;11;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006053992385796684;165.1803;1;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.3545340524776233;0.2981;1;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;190.6244182537879;58.2874;11111;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.18426015309113;29.5701;449;cache quente
+21;2026-05-09 22:36:08;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;235.87734897682336;163.0381;38457;cache quente
+21;2026-05-09 22:36:09;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;825.0028806180537;194.3763;160361;cache quente
+21;2026-05-09 22:36:09;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;883.8780930881201;445.2662;393561;cache quente
+21;2026-05-09 22:36:09;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6238076696986585;24.0459;15;cache quente
+21;2026-05-09 22:36:09;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1583.6668851857937;204.5354;323916;cache quente
+21;2026-05-09 22:36:09;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;1021.8236370646151;136.9708;139960;cache quente
+21;2026-05-09 22:36:09;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.15338952508372034;6.5193;1;cache quente
+21;2026-05-09 22:36:10;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09876196445896254;121.5043;12;cache quente
+21;2026-05-09 22:36:10;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.117387028654977;0.2810;2;cache quente
+21;2026-05-09 22:36:10;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;21.394584724119056;0.2337;5;cache quente
+21;2026-05-09 22:36:16;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1179.0680887435865;6440.0386;7593244;cache quente
+21;2026-05-09 22:36:17;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044671593291621;537.2542;24;cache quente
+21;2026-05-09 22:36:18;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1270.9402742935185;1974.6789;2509699;cache quente
+21;2026-05-09 22:36:19;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17853369960706428;442.4935;79;cache quente
+21;2026-05-09 22:36:21;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;791.4721536005101;1819.8101;1440329;cache quente
+21;2026-05-09 22:36:21;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.00942408138182793;106.1111;1;cache quente
+21;2026-05-09 22:36:21;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.004343702798723333;230.2183;1;cache quente
+21;2026-05-09 22:36:21;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.02907574740928141;34.3929;1;cache quente
+21;2026-05-09 22:36:21;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03323327128094634;30.0903;1;cache quente
+21;2026-05-09 22:36:21;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.00585501755166766;170.7937;1;cache quente
+21;2026-05-09 22:36:22;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005525638001611124;180.9746;1;cache quente
+21;2026-05-09 22:36:22;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.021948735771727;546.7285;12;cache quente
+21;2026-05-09 22:36:22;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.016837277224994368;296.9601;5;cache quente
+21;2026-05-09 22:36:22;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22060770608645544;40.7964;9;cache quente
+21;2026-05-09 22:36:23;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015049598812247324;332.2348;5;cache quente
+21;2026-05-09 22:36:23;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;80.94704440992841;309.9063;25086;cache quente
+21;2026-05-09 22:36:23;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09867135225308094;202.6931;20;cache quente
+21;2026-05-09 22:36:24;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07492797061768411;400.3845;30;cache quente
+21;2026-05-09 22:36:26;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;123.21181116523059;2093.9551;258000;cache quente
+21;2026-05-09 22:36:28;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;25.98153026204721;2544.6923;66115;cache quente
+22;2026-05-09 22:36:28;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05680897618187293;17.6029;1;cache quente
+22;2026-05-09 22:36:28;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.256987860411834;0.1902;1;cache quente
+22;2026-05-09 22:36:28;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06614578004035208;181.4175;12;cache quente
+22;2026-05-09 22:36:28;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.01581735002329;0.2629;5;cache quente
+22;2026-05-09 22:36:28;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.37462764280347;0.1928;2;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.04891306802994028;224.8888;11;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.0060103839481957504;166.3787;1;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.5359929329000095;0.2828;1;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;184.86867452481187;60.1021;11111;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.599480009092044;30.7545;449;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;235.73221670522526;163.1385;38457;cache quente
+22;2026-05-09 22:36:29;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;837.5321447357163;191.4685;160361;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;884.6734159345235;444.8659;393561;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.637765650102614;23.5196;15;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1624.3945673794992;199.4072;323916;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;975.1245830224266;143.5304;139960;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1568817185488509;6.3742;1;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.0995657357433783;120.5234;12;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.660047014676815;0.2611;2;cache quente
+22;2026-05-09 22:36:30;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;26.674064222490717;0.1874;5;cache quente
+22;2026-05-09 22:36:37;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1189.8724837052116;6381.5611;7593244;cache quente
+22;2026-05-09 22:36:37;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04440238461417189;540.5115;24;cache quente
+22;2026-05-09 22:36:39;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1281.3456503468474;1958.6432;2509699;cache quente
+22;2026-05-09 22:36:40;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17756931749227783;444.8967;79;cache quente
+22;2026-05-09 22:36:41;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;774.7150754389423;1859.1725;1440329;cache quente
+22;2026-05-09 22:36:42;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009432435811180232;106.0172;1;cache quente
+22;2026-05-09 22:36:42;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005480050716603252;182.4801;1;cache quente
+22;2026-05-09 22:36:42;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.036969096059963194;27.0496;1;cache quente
+22;2026-05-09 22:36:42;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03746481024581432;26.6917;1;cache quente
+22;2026-05-09 22:36:42;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005921747786462733;168.8691;1;cache quente
+22;2026-05-09 22:36:42;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005543379307346098;180.3954;1;cache quente
+22;2026-05-09 22:36:43;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02230518089004641;537.9916;12;cache quente
+22;2026-05-09 22:36:43;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01648320735994199;303.3390;5;cache quente
+22;2026-05-09 22:36:43;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22793978499719014;39.4841;9;cache quente
+22;2026-05-09 22:36:43;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.01527899610366473;327.2466;5;cache quente
+22;2026-05-09 22:36:44;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;66.99782543926052;374.4301;25086;cache quente
+22;2026-05-09 22:36:44;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09790719359665666;204.2751;20;cache quente
+22;2026-05-09 22:36:44;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07122402991964685;421.2062;30;cache quente
+22;2026-05-09 22:36:46;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;126.00342774762463;2047.5633;258000;cache quente
+22;2026-05-09 22:36:49;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.81408116085947;2465.6821;66115;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05169423726071926;19.3445;1;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.972304389108646;0.2011;1;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06619040865816615;181.2951;12;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;18.46565241202569;0.2708;5;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.774411086188302;0.1856;2;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.051661023302571496;212.9265;11;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006018577350303833;166.1522;1;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.599504736223749;0.2778;1;cache quente
+23;2026-05-09 22:36:49;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;192.73037871682547;57.6505;11111;cache quente
+23;2026-05-09 22:36:50;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.213466107684456;29.5133;449;cache quente
+23;2026-05-09 22:36:50;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;238.28269314759677;161.3923;38457;cache quente
+23;2026-05-09 22:36:50;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;843.5443771626676;190.1038;160361;cache quente
+23;2026-05-09 22:36:50;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;882.3225648080903;446.0512;393561;cache quente
+23;2026-05-09 22:36:50;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6469293691172914;23.1865;15;cache quente
+23;2026-05-09 22:36:51;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1612.234353928704;200.9112;323916;cache quente
+23;2026-05-09 22:36:51;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;984.6811376732882;142.1374;139960;cache quente
+23;2026-05-09 22:36:51;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.19104057881243658;5.2345;1;cache quente
+23;2026-05-09 22:36:51;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.0987661539455629;121.4991;12;cache quente
+23;2026-05-09 22:36:51;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.634549246508858;0.2620;2;cache quente
+23;2026-05-09 22:36:51;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;30.002999770959057;0.1667;5;cache quente
+23;2026-05-09 22:36:57;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1171.837179026419;6479.7773;7593244;cache quente
+23;2026-05-09 22:36:58;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04480126469761186;535.6992;24;cache quente
+23;2026-05-09 22:37:00;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1295.4896790550274;1937.2590;2509699;cache quente
+23;2026-05-09 22:37:00;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.18085273166290097;436.8195;79;cache quente
+23;2026-05-09 22:37:02;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;791.7427986633478;1819.1880;1440329;cache quente
+23;2026-05-09 22:37:02;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009250524280955633;108.1020;1;cache quente
+23;2026-05-09 22:37:02;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.0055478761853065;180.2492;1;cache quente
+23;2026-05-09 22:37:02;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03718795263723172;26.8904;1;cache quente
+23;2026-05-09 22:37:02;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03706824300937159;26.9773;1;cache quente
+23;2026-05-09 22:37:03;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.0058725459965022105;170.2839;1;cache quente
+23;2026-05-09 22:37:03;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005554413197911788;180.0370;1;cache quente
+23;2026-05-09 22:37:03;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022307261344307192;537.9414;12;cache quente
+23;2026-05-09 22:37:04;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017032911973712674;293.5493;5;cache quente
+23;2026-05-09 22:37:04;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22424202830895515;40.1352;9;cache quente
+23;2026-05-09 22:37:04;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015260018973067732;327.6536;5;cache quente
+23;2026-05-09 22:37:04;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;85.190763772456;294.4685;25086;cache quente
+23;2026-05-09 22:37:04;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.09922389106575563;201.5644;20;cache quente
+23;2026-05-09 22:37:05;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07501828007940528;399.9025;30;cache quente
+23;2026-05-09 22:37:07;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;126.29258768587849;2042.8752;258000;cache quente
+23;2026-05-09 22:37:09;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.466176661118748;2407.1425;66115;cache quente
+24;2026-05-09 22:37:09;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.055177302898637384;18.1234;1;cache quente
+24;2026-05-09 22:37:09;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;6.00532073860939;0.1665;1;cache quente
+24;2026-05-09 22:37:09;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06682212314038882;179.5812;12;cache quente
+24;2026-05-09 22:37:09;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;18.408409132472737;0.2716;5;cache quente
+24;2026-05-09 22:37:09;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.646792410291336;0.1879;2;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.050885229521578576;216.1727;11;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006067114677391452;164.8230;1;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.7721330362188734;0.2651;1;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;190.40024286103065;58.3560;11111;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.985018817651639;29.9633;449;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;238.10824475725272;161.5106;38457;cache quente
+24;2026-05-09 22:37:10;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;847.1165438760453;189.3022;160361;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;886.1784133459705;444.1103;393561;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6667014833750746;22.4988;15;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1630.282642536018;198.6870;323916;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;976.992858266261;143.2559;139960;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1869647782610501;5.3486;1;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09679660742651851;123.9713;12;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.968889406262485;0.2510;2;cache quente
+24;2026-05-09 22:37:11;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;21.628168706162064;0.2312;5;cache quente
+24;2026-05-09 22:37:18;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1178.5555841103258;6442.8391;7593244;cache quente
+24;2026-05-09 22:37:18;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04360388785668635;550.4096;24;cache quente
+24;2026-05-09 22:37:20;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1312.7158621953238;1911.8372;2509699;cache quente
+24;2026-05-09 22:37:21;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17823997594474025;443.2227;79;cache quente
+24;2026-05-09 22:37:22;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;800.157883976925;1800.0560;1440329;cache quente
+24;2026-05-09 22:37:22;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009541885580903464;104.8011;1;cache quente
+24;2026-05-09 22:37:23;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005400574897642243;185.1655;1;cache quente
+24;2026-05-09 22:37:23;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037740516058475705;26.4967;1;cache quente
+24;2026-05-09 22:37:23;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.0360371645455133;27.7491;1;cache quente
+24;2026-05-09 22:37:23;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005910448920902402;169.1919;1;cache quente
+24;2026-05-09 22:37:23;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055763284322117536;179.3295;1;cache quente
+24;2026-05-09 22:37:24;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02216527122598605;541.3875;12;cache quente
+24;2026-05-09 22:37:24;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.0169646852357974;294.7299;5;cache quente
+24;2026-05-09 22:37:24;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22534916161903015;39.9380;9;cache quente
+24;2026-05-09 22:37:24;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.01524398990596447;327.9981;5;cache quente
+24;2026-05-09 22:37:25;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;89.63434696169378;279.8704;25086;cache quente
+24;2026-05-09 22:37:25;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10039323427329212;199.2166;20;cache quente
+24;2026-05-09 22:37:25;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07492682402756617;400.3907;30;cache quente
+24;2026-05-09 22:37:27;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.43038031862581;2056.9179;258000;cache quente
+24;2026-05-09 22:37:30;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.214623235357358;2429.3924;66115;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05703656381082929;17.5326;1;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.046732884683295;0.1981;1;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06652794444438691;180.3753;12;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;17.975459893166047;0.2782;5;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.945102779049307;0.2011;2;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05056376274172058;217.5471;11;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006034902751368242;165.7028;1;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.6625072342530176;0.2730;1;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;189.31781673482953;58.6897;11111;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.324136892990428;29.3002;449;cache quente
+25;2026-05-09 22:37:30;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;238.52115470335;161.2310;38457;cache quente
+25;2026-05-09 22:37:31;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;837.6750235211929;191.4358;160361;cache quente
+25;2026-05-09 22:37:31;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;907.5689410993906;433.6431;393561;cache quente
+25;2026-05-09 22:37:31;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.660012131003928;22.7269;15;cache quente
+25;2026-05-09 22:37:31;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1641.5303884431896;197.3256;323916;cache quente
+25;2026-05-09 22:37:31;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;969.2948298918891;144.3936;139960;cache quente
+25;2026-05-09 22:37:31;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.16362225636831057;6.1116;1;cache quente
+25;2026-05-09 22:37:32;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09786510375434405;122.6178;12;cache quente
+25;2026-05-09 22:37:32;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.46107185551685;0.2681;2;cache quente
+25;2026-05-09 22:37:32;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;24.26677865630165;0.2060;5;cache quente
+25;2026-05-09 22:37:38;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1171.9673852806334;6479.0574;7593244;cache quente
+25;2026-05-09 22:37:39;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.045138477457290625;531.6972;24;cache quente
+25;2026-05-09 22:37:41;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1284.5499269728641;1953.7575;2509699;cache quente
+25;2026-05-09 22:37:41;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17852606261358853;442.5124;79;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;799.2765504756926;1802.0409;1440329;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009447098543750282;105.8526;1;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005454697293498887;183.3282;1;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03790270822320389;26.3833;1;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03677037284909573;27.1958;1;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005883409705332989;169.9695;1;cache quente
+25;2026-05-09 22:37:43;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005564076227276624;179.7244;1;cache quente
+25;2026-05-09 22:37:44;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022378927595865166;536.2187;12;cache quente
+25;2026-05-09 22:37:44;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017161809173787124;291.3446;5;cache quente
+25;2026-05-09 22:37:44;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.21716425752014507;41.4433;9;cache quente
+25;2026-05-09 22:37:45;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.014946744837995282;334.5210;5;cache quente
+25;2026-05-09 22:37:45;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.56033285392873;283.2645;25086;cache quente
+25;2026-05-09 22:37:45;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.0810090368975651;246.8860;20;cache quente
+25;2026-05-09 22:37:46;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07427883201972672;403.8836;30;cache quente
+25;2026-05-09 22:37:48;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;119.88191681399861;2152.1177;258000;cache quente
+25;2026-05-09 22:37:50;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.656336923203803;2480.2733;66115;cache quente
+26;2026-05-09 22:37:50;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.054804289223685;18.2467;1;cache quente
+26;2026-05-09 22:37:50;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.801989901629034;0.2082;1;cache quente
+26;2026-05-09 22:37:50;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06718821179909736;178.6028;12;cache quente
+26;2026-05-09 22:37:50;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.575217601764063;0.2554;5;cache quente
+26;2026-05-09 22:37:50;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;10.66387995719208;0.1875;2;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.043472091784743296;253.0359;11;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005956747957778554;167.8768;1;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.7566586549698413;0.2662;1;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;187.70757473310667;59.1931;11111;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.53049463904105;30.9005;449;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;238.3311118136482;161.3595;38457;cache quente
+26;2026-05-09 22:37:51;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;843.6611382061818;190.0775;160361;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;902.2868822000487;436.1817;393561;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.7113818535304024;21.0857;15;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1641.7242747629368;197.3023;323916;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;965.8336084792332;144.9111;139960;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.19223649072881413;5.2019;1;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09715287508414339;123.5167;12;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.831207717017253;0.2928;2;cache quente
+26;2026-05-09 22:37:52;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;26.746835936920736;0.1869;5;cache quente
+26;2026-05-09 22:37:59;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1164.6169049633893;6519.9500;7593244;cache quente
+26;2026-05-09 22:37:59;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04466770480015237;537.3009;24;cache quente
+26;2026-05-09 22:38:01;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1292.2329648929772;1942.1413;2509699;cache quente
+26;2026-05-09 22:38:02;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17833016044235278;442.9985;79;cache quente
+26;2026-05-09 22:38:03;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;800.1168232582429;1800.1484;1440329;cache quente
+26;2026-05-09 22:38:04;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009567659382726683;104.5188;1;cache quente
+26;2026-05-09 22:38:04;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005460947014959147;183.1184;1;cache quente
+26;2026-05-09 22:38:04;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03623043090024443;27.6011;1;cache quente
+26;2026-05-09 22:38:04;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.0369903688941718;27.0341;1;cache quente
+26;2026-05-09 22:38:04;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005831000757989414;171.4971;1;cache quente
+26;2026-05-09 22:38:04;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005535623865246365;180.6481;1;cache quente
+26;2026-05-09 22:38:05;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.02198580644332141;545.8067;12;cache quente
+26;2026-05-09 22:38:05;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01719096343112933;290.8505;5;cache quente
+26;2026-05-09 22:38:05;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2228084725911361;40.3934;9;cache quente
+26;2026-05-09 22:38:05;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015471637394138243;323.1720;5;cache quente
+26;2026-05-09 22:38:06;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.71504803838579;282.7705;25086;cache quente
+26;2026-05-09 22:38:06;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10233239211671813;195.4415;20;cache quente
+26;2026-05-09 22:38:06;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07461992156400672;402.0374;30;cache quente
+26;2026-05-09 22:38:08;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;126.60482665035504;2037.8370;258000;cache quente
+26;2026-05-09 22:38:11;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.14786291947535;2435.3667;66115;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05479494087981937;18.2499;1;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.809899989064082;0.1721;1;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06695914533180382;179.2138;12;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;22.057331310283182;0.2267;5;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;12.246422409270284;0.1633;2;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05134206620837988;214.2493;11;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006085141683782113;164.3347;1;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.9793550700696394;0.2513;1;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;193.32252749716028;57.4739;11111;cache quente
+27;2026-05-09 22:38:11;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.989496667566007;29.9543;449;cache quente
+27;2026-05-09 22:38:12;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;239.24657355236891;160.7421;38457;cache quente
+27;2026-05-09 22:38:12;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;835.5360193998087;191.9259;160361;cache quente
+27;2026-05-09 22:38:12;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;907.81519289365;433.5255;393561;cache quente
+27;2026-05-09 22:38:12;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.631938580301037;23.7365;15;cache quente
+27;2026-05-09 22:38:12;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1636.370428776667;197.9478;323916;cache quente
+27;2026-05-09 22:38:13;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;981.196019077653;142.6422;139960;cache quente
+27;2026-05-09 22:38:13;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.187708156374699;5.3274;1;cache quente
+27;2026-05-09 22:38:13;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09813448069599301;122.2812;12;cache quente
+27;2026-05-09 22:38:13;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;8.568099326372947;0.2334;2;cache quente
+27;2026-05-09 22:38:13;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;29.923812894100205;0.1671;5;cache quente
+27;2026-05-09 22:38:19;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1186.0367013839593;6402.1999;7593244;cache quente
+27;2026-05-09 22:38:20;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044963191698132676;533.7699;24;cache quente
+27;2026-05-09 22:38:22;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1271.6606316427383;1973.5603;2509699;cache quente
+27;2026-05-09 22:38:22;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1776029976428912;444.8123;79;cache quente
+27;2026-05-09 22:38:24;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;786.9763127291299;1830.2063;1440329;cache quente
+27;2026-05-09 22:38:24;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009512610825389211;105.1236;1;cache quente
+27;2026-05-09 22:38:24;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005398636886190642;185.2319;1;cache quente
+27;2026-05-09 22:38:24;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037286984126207436;26.8190;1;cache quente
+27;2026-05-09 22:38:24;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03603626978326698;27.7498;1;cache quente
+27;2026-05-09 22:38:24;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005904594088391613;169.3597;1;cache quente
+27;2026-05-09 22:38:25;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005551542006643617;180.1301;1;cache quente
+27;2026-05-09 22:38:25;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022315038816186367;537.7539;12;cache quente
+27;2026-05-09 22:38:25;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017098425564955687;292.4246;5;cache quente
+27;2026-05-09 22:38:25;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22656878490586924;39.7230;9;cache quente
+27;2026-05-09 22:38:26;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015397341642709266;324.7314;5;cache quente
+27;2026-05-09 22:38:26;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;87.67543728792259;286.1235;25086;cache quente
+27;2026-05-09 22:38:26;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10002196132425309;199.9561;20;cache quente
+27;2026-05-09 22:38:27;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07510143124247545;399.4598;30;cache quente
+27;2026-05-09 22:38:29;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.86169508205676;2049.8691;258000;cache quente
+27;2026-05-09 22:38:31;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;27.24659320925353;2426.5419;66115;cache quente
+28;2026-05-09 22:38:31;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.056570163438015596;17.6772;1;cache quente
+28;2026-05-09 22:38:31;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.462093204669537;0.1831;1;cache quente
+28;2026-05-09 22:38:31;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06677949507435232;179.6959;12;cache quente
+28;2026-05-09 22:38:31;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;18.204988442181556;0.2746;5;cache quente
+28;2026-05-09 22:38:31;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;9.628067759583972;0.2077;2;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.04996787202033126;220.1415;11;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006051207691455049;165.2563;1;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.070053831846862;0.2457;1;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;185.6814609998187;59.8390;11111;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;15.085469769638982;29.7637;449;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;236.33813682044774;162.7202;38457;cache quente
+28;2026-05-09 22:38:32;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;848.4062140927957;189.0144;160361;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;890.069203834558;442.1690;393561;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6624543695386724;22.6431;15;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1636.2516618092172;197.9622;323916;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;1001.1789962576418;139.7952;139960;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1908175905741146;5.2406;1;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.10014690132121144;119.8240;12;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;4.652363770903596;0.4299;2;cache quente
+28;2026-05-09 22:38:33;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;21.366151540956803;0.2340;5;cache quente
+28;2026-05-09 22:38:40;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1178.1240241064622;6445.1992;7593244;cache quente
+28;2026-05-09 22:38:40;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.04487669829838311;534.7987;24;cache quente
+28;2026-05-09 22:38:42;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1288.5467281021492;1947.6973;2509699;cache quente
+28;2026-05-09 22:38:42;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17689748533489918;446.5863;79;cache quente
+28;2026-05-09 22:38:44;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;789.0730141900779;1825.3431;1440329;cache quente
+28;2026-05-09 22:38:44;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.00956096818081721;104.5919;1;cache quente
+28;2026-05-09 22:38:45;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005505227287580155;181.6455;1;cache quente
+28;2026-05-09 22:38:45;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03761343648356057;26.5862;1;cache quente
+28;2026-05-09 22:38:45;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03694389873043723;27.0681;1;cache quente
+28;2026-05-09 22:38:45;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005918970723139666;168.9483;1;cache quente
+28;2026-05-09 22:38:45;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.005587065986976355;178.9848;1;cache quente
+28;2026-05-09 22:38:46;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022297762955245555;538.1706;12;cache quente
+28;2026-05-09 22:38:46;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.017112903654789867;292.1772;5;cache quente
+28;2026-05-09 22:38:46;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22628425934173682;39.7730;9;cache quente
+28;2026-05-09 22:38:46;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015525718030259124;322.0463;5;cache quente
+28;2026-05-09 22:38:46;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;87.35515622941898;287.1725;25086;cache quente
+28;2026-05-09 22:38:47;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10092553611563028;198.1659;20;cache quente
+28;2026-05-09 22:38:47;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07473845799735851;401.3998;30;cache quente
+28;2026-05-09 22:38:49;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.37702688252377;2057.7933;258000;cache quente
+28;2026-05-09 22:38:52;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;25.732456499939104;2569.3233;66115;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05308275723806306;18.8385;1;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;4.1457994871102635;0.2412;1;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06692695414216862;179.3000;12;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;19.594473077881467;0.2552;5;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;12.49156817018037;0.1601;2;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05151066883717473;213.5480;11;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.006059528015581442;165.0294;1;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.538119706539774;0.2826;1;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;183.69712865109017;60.4854;11111;cache quente
+29;2026-05-09 22:38:52;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.260979673622638;31.4845;449;cache quente
+29;2026-05-09 22:38:53;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;236.56305456559974;162.5655;38457;cache quente
+29;2026-05-09 22:38:53;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;831.1350494426387;192.9422;160361;cache quente
+29;2026-05-09 22:38:53;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;906.8496231503301;433.9871;393561;cache quente
+29;2026-05-09 22:38:53;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6888211130410864;21.7763;15;cache quente
+29;2026-05-09 22:38:53;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1635.4660751777533;198.0573;323916;cache quente
+29;2026-05-09 22:38:54;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;983.766516984328;142.2695;139960;cache quente
+29;2026-05-09 22:38:54;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.1825548071579419;5.4778;1;cache quente
+29;2026-05-09 22:38:54;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09761890886194534;122.9270;12;cache quente
+29;2026-05-09 22:38:54;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;6.428222425205222;0.3111;2;cache quente
+29;2026-05-09 22:38:54;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;22.984912937457114;0.2175;5;cache quente
+29;2026-05-09 22:39:00;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1182.9641895458344;6418.8283;7593244;cache quente
+29;2026-05-09 22:39:01;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.044738501501373706;536.4507;24;cache quente
+29;2026-05-09 22:39:03;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1283.2169548607617;1955.7870;2509699;cache quente
+29;2026-05-09 22:39:03;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.1781006655171986;443.5694;79;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;805.3078027143717;1788.5447;1440329;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009299317706327463;107.5348;1;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005415597999795606;184.6518;1;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03847978972285536;25.9877;1;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03654327513104281;27.3648;1;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005800986765112317;172.3845;1;cache quente
+29;2026-05-09 22:39:05;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.00547953846621956;182.4971;1;cache quente
+29;2026-05-09 22:39:06;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022172888489548754;541.2015;12;cache quente
+29;2026-05-09 22:39:06;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01707675847527288;292.7956;5;cache quente
+29;2026-05-09 22:39:06;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.22022141009182633;40.8680;9;cache quente
+29;2026-05-09 22:39:07;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015482723208782488;322.9406;5;cache quente
+29;2026-05-09 22:39:07;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;79.08611258463054;317.1985;25086;cache quente
+29;2026-05-09 22:39:07;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.0939224536589437;212.9416;20;cache quente
+29;2026-05-09 22:39:08;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07357372839525304;407.7542;30;cache quente
+29;2026-05-09 22:39:10;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;121.09229280801674;2130.6063;258000;cache quente
+29;2026-05-09 22:39:12;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;25.621965023909176;2580.4032;66115;cache quente
+30;2026-05-09 22:39:12;sistema_giovana;1;Busca básica de produto por ASIN;Lookup Simples;tuplas por milissegundos;tp/ms;0.05104602754068327;19.5902;1;cache quente
+30;2026-05-09 22:39:12;sistema_giovana;2;Busca do identificador interno do produto;Lookup Simples;tuplas por milissegundos;tp/ms;5.369819372106897;0.1862;1;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;3;Busca de reviews de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.06710988420349845;178.8112;12;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;4;Busca de produtos similares;Lookup Simples;tuplas por milissegundos;tp/ms;17.967062801585275;0.2783;5;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;5;Busca de categorias de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;8.83938820420197;0.2263;2;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;6;Busca de reviews positivos de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.05187126606295586;212.0635;11;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;7;Busca de reviews úteis de um produto;Lookup Simples;tuplas por milissegundos;tp/ms;0.005994329951352534;166.8243;1;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;8;Busca de informações resumidas do produto;Lookup Simples;tuplas por milissegundos;tp/ms;3.9132051513136967;0.2555;1;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;9;Produtos com sales rank alto;Filtros;tuplas por milissegundos;tp/ms;185.45878599481253;59.9109;11111;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;10;Produtos com muitos downloads;Filtros;tuplas por milissegundos;tp/ms;14.923591213058236;30.0866;449;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;11;Reviews com alta utilidade;Filtros;tuplas por milissegundos;tp/ms;237.65669864528044;161.8174;38457;cache quente
+30;2026-05-09 22:39:13;sistema_giovana;12;Reviews negativos com muitos votos;Filtros;tuplas por milissegundos;tp/ms;810.48251616328;197.8587;160361;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;13;Produtos do grupo Book;Filtros;tuplas por milissegundos;tp/ms;863.1389077196113;455.9648;393561;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;14;Categorias raiz;Filtros;tuplas por milissegundos;tp/ms;0.6871472586856817;21.8294;15;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;15;Reviews recentes;Filtros;tuplas por milissegundos;tp/ms;1678.304677892647;193.0019;323916;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;16;Produtos sem downloads;Filtros;tuplas por milissegundos;tp/ms;1022.5550541453125;136.8728;139960;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;17;Produto e identificador interno;Joins;tuplas por milissegundos;tp/ms;0.19516730612823036;5.1238;1;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;18;Produto e reviews associados;Joins;tuplas por milissegundos;tp/ms;0.09935573025453875;120.7781;12;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;19;Produto e categorias associadas;Joins;tuplas por milissegundos;tp/ms;7.280908282848489;0.2747;2;cache quente
+30;2026-05-09 22:39:14;sistema_giovana;20;Produtos similares detalhados;Joins;tuplas por milissegundos;tp/ms;22.05159243456472;0.2267;5;cache quente
+30;2026-05-09 22:39:21;sistema_giovana;21;Reviews e dados do produto;Joins;tuplas por milissegundos;tp/ms;1160.2994517009292;6544.2106;7593244;cache quente
+30;2026-05-09 22:39:21;sistema_giovana;22;Produto com categorias e reviews;Joins;tuplas por milissegundos;tp/ms;0.040558989399789414;591.7307;24;cache quente
+30;2026-05-09 22:39:23;sistema_giovana;23;Categorias e produtos associados;Joins;tuplas por milissegundos;tp/ms;1245.161038309672;2015.5618;2509699;cache quente
+30;2026-05-09 22:39:24;sistema_giovana;24;Produtos similares e reviews;Joins;tuplas por milissegundos;tp/ms;0.17267017666070503;457.5197;79;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;25;Produto e quantidade de categorias;Joins;tuplas por milissegundos;tp/ms;775.8437047429832;1856.4680;1440329;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;26;Quantidade total de produtos;Agregações;tuplas por milissegundos;tp/ms;0.009253148411440074;108.0713;1;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;27;Média de avaliações de um produto;Agregações;tuplas por milissegundos;tp/ms;0.005536915376314843;180.6060;1;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;28;Maior sales rank;Agregações;tuplas por milissegundos;tp/ms;0.037087645183129944;26.9632;1;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;29;Menor sales rank;Agregações;tuplas por milissegundos;tp/ms;0.03638686838995875;27.4824;1;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;30;Soma total de votos úteis;Agregações;tuplas por milissegundos;tp/ms;0.005880699392197578;170.0478;1;cache quente
+30;2026-05-09 22:39:26;sistema_giovana;31;Quantidade de reviews do produto;Agregações;tuplas por milissegundos;tp/ms;0.0055174255471991136;181.2439;1;cache quente
+30;2026-05-09 22:39:27;sistema_giovana;32;Quantidade de reviews por ano;Group By;tuplas por milissegundos;tp/ms;0.022376956931584428;536.2659;12;cache quente
+30;2026-05-09 22:39:27;sistema_giovana;33;Quantidade de reviews por nota;Group By;tuplas por milissegundos;tp/ms;0.01702491445055694;293.6872;5;cache quente
+30;2026-05-09 22:39:27;sistema_giovana;34;Quantidade de produtos por grupo;Group By;tuplas por milissegundos;tp/ms;0.2268829183376986;39.6680;9;cache quente
+30;2026-05-09 22:39:28;sistema_giovana;35;Média de votos úteis por nota;Group By;tuplas por milissegundos;tp/ms;0.015473265771296912;323.1380;5;cache quente
+30;2026-05-09 22:39:28;sistema_giovana;36;Quantidade de produtos por categoria;Group By;tuplas por milissegundos;tp/ms;88.36690145914532;283.8846;25086;cache quente
+30;2026-05-09 22:39:28;sistema_giovana;37;Top 20 produtos mais baixados;Order By;tuplas por milissegundos;tp/ms;0.10221774272526724;195.6607;20;cache quente
+30;2026-05-09 22:39:29;sistema_giovana;38;Top 30 reviews mais úteis;Order By;tuplas por milissegundos;tp/ms;0.07539674597124196;397.8952;30;cache quente
+30;2026-05-09 22:39:31;sistema_giovana;39;Produtos acima da média global de avaliações;Subquery;tuplas por milissegundos;tp/ms;125.14892006005952;2061.5440;258000;cache quente
+30;2026-05-09 22:39:33;sistema_giovana;40;Produtos com mais reviews que a média;Subquery;tuplas por milissegundos;tp/ms;26.93829932740489;2454.3123;66115;cache quente
